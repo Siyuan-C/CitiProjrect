@@ -10,6 +10,7 @@ public class CitiProjectApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(CitiProjectApplication.class, args);
+
     }
 
 }
