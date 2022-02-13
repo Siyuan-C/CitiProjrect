@@ -1,0 +1,29 @@
+.top {
+    height: 90px;
+    display: flex;
+    width: 100%;
+}
+
+.nav-item {
+    font-family: 'Arial Normal', 'Arial', sans-serif;
+
+    /*padding-right: 10%;*/
+}
+
+.text-small {
+    font-size: 13px;
+
+}
+
+.nav-x {
+    display: block;
+    padding: .5rem 1rem;
+    color: #000000;
+    text-decoration: none;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out
+}
+
+.nav-x:hover {
+    color: #5151E5;
+
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/general.css" rel="stylesheet">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/general.js"></script>
+    <title>注册</title>
+    <style>
+        .base {
+            position: relative;
+            width: 100%;
+            height: 800px;
+        }
+
+        .base_bg {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #basebg {
+            background-image: url(img/bg_beehive.png);
+        }
+
+        .welcome {
+            width: 100% auto;
+            margin: 0 auto;
+            text-align: center;
+            align-content: center;
+        }
+
+        .welcome_text {
+            position: relative;
+            margin-top: 5%;
+        }
+
+        .register_card {
+            position: relative;
+            left: 30%;
+            height: 80%;
+            padding-bottom: 3%;
+            margin-top: 3%;
+            text-align: center;
+            width: 40%;
+        }
+
+        #username {
+            margin-top: 8%;
+        }
+
+        .register_input {
+            position: relative;
+            width: 50%;
+            height: 10%;
+            margin-bottom: 4%;
+            margin-left: 25%;
+        }
+
+        .register_button {
+            margin-top: 4%;
+            margin-bottom: 4%;
+            height: 60px;
+        }
+    </style>
+</head>
+<body>
+<div id="nav"></div>
+<div class="base">
+    <div class="base_bg" id="basebg">
+        <div class="welcome">
+            <div class="welcome_text ">
+                <h1>欢迎使用仓单宝</h1>
+            </div>
+            <div class="register_card card text-center">
+                <dic class="register_form text-center">
+                    <!-- 输入框组 -->
+                    <div id="username" class="register_input form-floating">
+                        <input type="text" class="form-control" placeholder="text">
+                        <label for="floatingInput">请输入用户名</label>
+                    </div>
+                    <div id="number" class="register_input form-floating">
+                        <input type="text" class="form-control" placeholder="number">
+                        <label for="floatingPassword">请输入手机号</label>
+                    </div>
+                    <div id="password" class="register_input form-floating">
+                        <input type="password" class="form-control" maxlength="16" placeholder="password">
+                        <label for="floatingPassword">请设置6-16位密码</label>
+                    </div>
+                    <div id="confirm" class="register_input form-floating">
+                        <input type="password" class="form-control" maxlength="16" placeholder="password">
+                        <label for="floatingPassword">确认密码</label>
+                    </div>
+                    <div id="registerbt" class="register_button">
+                        <a href="success.html" class="btn btn-lg w-25 btn-primary">注册</a>
+                    </div>
+                    <div id="tologin" class="login_link">
+                        <a href="#"><p class="text-black">已经有帐号？</p>登录</a>
+                    </div>
+                </dic>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footer"></div>
+</body>
+</html>
