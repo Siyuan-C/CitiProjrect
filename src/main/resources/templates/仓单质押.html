@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>企业信息</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <link rel="stylesheet" type="text/css" href="css/transaction_pledge.css">
+    <script src="javascript/jquery-3.5.1.js" type="text/javascript" language="JavaScript"></script>
+    <script src="javascript/transaction_pledge.js" type="text/javascript" language="JavaScript"></script>
+</head>
+<body class="background">
+<nav class="navbar navbar-expand-lg navbar-ligh shadow">
+    <a class="navbar-brand" href="#">
+        <img src="resource/blackLogo.png" alt="logo">
+    </a>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item head-tag active"><a class="nav-link" href="/after_login">首页</a></li>
+            <li class="nav-item head-tag"><a class="nav-link " href="/business">业务大厅</a></li>
+            <li class="nav-item head-tag"><a class="nav-link " href="javascript:void(0);">关于我们</a></li>
+        </ul>
+
+        <ul class="navbar-nav">
+            <li class="nav-item head-tag">
+                <a class="nav-link" href="javascript:void(0);">
+                    <img src="resource/u92.png" alt="app">
+                    手机App
+                </a>
+            </li>
+            <li class="nav-item head-tag">
+                <a class="nav-link" href="/my_info">
+                    个人中心
+                </a>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+<div class="container transaction-pledge-info">
+    <div class="row category">
+        <div class="offset-md-1 col-md-1 sector displaying" id="sector1">可质押仓单</div>
+        <div class="offset-md-2 col-md-1 sector" id="sector2">已质押仓单</div>
+    </div>
+    <div id="already">
+        <div class="row category-category">
+            <div class="offset-md-1 col-md-1">仓单号</div>
+            <div class="offset-md-1 col-md-1">物品种类</div>
+            <div class="offset-md-1 col-md-1">物品数量</div>
+            <div class="offset-md-1 col-md-2">仓储公司</div>
+        </div>
+        <hr style="width: 85%">
+        <div class="row one-line" th:each="wh : ${wh_list}">
+            <div class="offset-md-1 col-md-1"><p th:text="${wh.id}"></p></div>
+            <div class="offset-md-1 col-md-1"><p th:text="${wh.type}"></p></div>
+            <div class="offset-md-1 col-md-1"><p th:text="${wh.num}"></p></div>
+            <div class="offset-md-1 col-md-2"><p th:text="${wh.storage_company}"></p></div>
+            <div class="col-md text-center"><a class="button btn btn-sm" th:href="@{'/submit_pledge?id='+${wh.id}}">质押</a></div>
+        </div>
+</div>
+    <div class="hide" id="capacity">
+        <div class="row category-category">
+            <div class="offset-md-1 col-md-1">仓单号</div>
+            <div class="offset-md-1 col-md-1">物品种类</div>
+            <div class="offset-md-1 col-md-1">仓储公司</div>
+            <div class="offset-md-1 col-md-1">折合市值</div>
+            <div class="offset-md-1 col-md-1">贷款额</div>
+        </div>
+        <hr style="width: 85%">
+        <div class="row one-line" th:each="wh2 : ${wh_list2}">
+            <div class="offset-md-1 col-md-1"><p th:text="${wh2.id}"></p></div>
+            <div class="offset-md-1 col-md-1"><p th:text="${wh2.type}"></p></div>
+            <div class="offset-md-1 col-md-1"><p th:text="${wh2.storage_company}"></p></div>
+            <div class="offset-md-1 col-md-1"><p th:text="${wh2.getEstimatedValue()}"></p></div>
+            <div class="offset-md-1 col-md-1 blue">等待银行审核</div>
+            <div class="col-md text-center hide"><a class="button btn btn-sm" href="#">还贷</a></div>
+        </div>
+        <div class="row one-line">
+            <div class="offset-md-1 col-md-1">xxxxxx06</div>
+            <div class="offset-md-1 col-md-1">钢材</div>
+            <div class="offset-md-1 col-md-1">xxxx仓储公司</div>
+            <div class="offset-md-1 col-md-1">4400000</div>
+            <div class="offset-md-1 col-md-1">4000000</div>
+            <div class="col-md text-center"><a class="button btn btn-sm" href="#">还贷</a></div>
+        </div>
+    </div>
+
+</div>
+<footer class="container-fluid">
+    <hr style="border-top: 3px solid rgb(204, 204, 204); width: 85%">
+    <div class="row">
+        <div class="col-md-1 offset-1 foot-tag">
+            <p><a href="#">关于我们</a></p>
+        </div>
+        <div class="col-md-2 foot-tag">
+            <p><a href="#">法律声明及隐私政策</a></p>
+        </div>
+        <div class="col-md-1 offset-1 foot-tag">
+            <p><a href="#">加入我们</a></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 offset-1 foot-tag foot-tag-color">
+            <address>Address/地址：辽宁省大连经济技术开发区图强街321号</address>
+        </div>
+        <div class="col-md-2 foot-tag foot-tag-color">
+            <p>P.C./邮编：116600</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 offset-1 foot-tag foot-tag-color">
+            <p>Tel/联系电话：020-000000 000-000000</p>
+        </div>
+        <div class="col-md-2 foot-tag foot-tag-color">
+            <p>Mail/邮箱：contact@fkadjkhsf.com</p>
+        </div>
+    </div>
+
+</footer>
+</body>
+</html>

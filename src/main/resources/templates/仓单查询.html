@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>仓单查询</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <link rel="stylesheet" type="text/css"  href="css/lookup.css">
+    <script src="javascript/jquery-3.5.1.min.js" type="text/javascript" language="JavaScript"></script>
+    <script src="javascript/transaction_search.js" type="text/javascript" language="JavaScript"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-ligh shadow">
+    <a class="navbar-brand" href="#">
+        <img src="resource/blackLogo.png" alt="logo">
+    </a>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item head-tag active"><a class="nav-link" href="/after_login">首页</a></li>
+            <li class="nav-item head-tag"><a class="nav-link " href="/business">业务大厅</a></li>
+            <li class="nav-item head-tag"><a class="nav-link " href="javascript:void(0);">关于我们</a></li>
+        </ul>
+
+        <ul class="navbar-nav">
+
+            <li class="nav-item head-tag">
+                <a class="nav-link" href="通知.html">
+                    通知
+                </a>
+            </li>
+
+            <li class="nav-item head-tag">
+                <a class="nav-link" href="javascript:void(0);">
+                    <img src="resource/u92.png" alt="app">
+                    手机App
+                </a>
+            </li>
+
+            <li class="nav-item head-tag">
+                <a class="nav-link" href="/my_info">
+                    个人中心
+                </a>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+
+<div class="main">
+    <div class="a">
+        <img class="img1" src="resource/logo_transparent.png" alt="app">
+        <form class="input_box" method="get" action="/search">
+            <input class="input1" id="search-no" type="text" name="WH_id" placeholder="请输入仓单号">
+            <button type="submit" class="btn" id="search" value="">
+                <img src="resource/u281.png" class="search_icon" alt="search_icon">
+                </button>
+            <p style="color:red" th:text="${message}"th:if="${not #strings.isEmpty(message)}"></p>
+        </form>
+    </div>
+</div>
+
+<div class="c">
+    <img src="resource/7.png">
+</div>
+
+<footer class="container-fluid">
+    <div class="row">
+        <div class="col-md-1 offset-1 foot-tag">
+            <p><a href="#">关于我们</a></p>
+        </div>
+        <div class="col-md-2 foot-tag">
+            <p><a href="#">法律声明及隐私政策</a></p>
+        </div>
+        <div class="col-md-1 offset-1 foot-tag">
+            <p><a href="#">加入我们</a></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 offset-1 foot-tag foot-tag-color">
+            <address>Address/地址：辽宁省大连经济技术开发区图强街321号</address>
+        </div>
+        <div class="col-md-2 foot-tag foot-tag-color">
+            <p>P.C./邮编：116600</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 offset-1 foot-tag foot-tag-color">
+            <p>Tel/联系电话：020-000000 000-000000</p>
+        </div>
+        <div class="col-md-2 foot-tag foot-tag-color">
+            <p>Mail/邮箱：contact@fkadjkhsf.com</p>
+        </div>
+    </div>
+
+</footer>
+
+</body>
+</html>
+<script>
+document.getElementById("search").addEventListener("click",function() {
+    document.location.href="/search";
+});
+
+</script>

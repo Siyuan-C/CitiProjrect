@@ -1,0 +1,109 @@
+.main{
+    /*height: auto;*/
+    background: url("../resource/u202.png") no-repeat center;
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+body{
+    background-color: #f7f7f7;
+}
+
+.roundedRectangle1{
+    box-shadow:0 3px 3px #e9e9e9;
+    padding-top: 30px;
+    margin-left: 27%;
+    margin-right: 27%;
+    width: 46%;
+    height: 400px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    background: #ffffff;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #f2f2f2;
+    border-radius: 10px;
+}
+
+.roundedRectangle1 img{
+    width:10%;
+    height:auto;
+}
+
+.input-file{
+    overflow: hidden;
+    opacity: 0;
+    position:absolute;
+    right:0;
+    top:0;
+    border:0;
+    margin:0;
+    width:0;
+    height:0;
+
+}
+
+.sign{
+    line-height: normal;
+    color: white;
+    background-color: #5453e2;
+    font-weight: bold;
+    width: 270px;
+    height: 60px;
+    border-radius:10px;
+}
+
+.sign:hover{
+    color: white;
+    font-weight: bold;
+    background-color: #010132;
+    border-radius:10px;
+}
+
+#my-submit{
+    color: white;
+    background-color: #5453e2;
+    font-weight: bold;
+    width: 270px;
+    height: 60px;
+    border-radius:10px;
+}
+#my-submit:hover{
+    color: white;
+    font-weight: bold;
+    background-color: #010132;
+    border-radius:10px;
+}
+
+.a{
+    margin-top:5%;
+    width:40%;
+    margin-left: 30%;
+    margin-right: 30%;
+    text-align: center;
+}
+
+.b{
+    width:25%;
+    float:right;
+    margin-top: 50px;
+    padding-top: 80px;
+
+
+}
+
+#look{
+    width: 250px;
+    height: 250px;
+    border: 2px solid #ccc;
+
+}
+
+.c{
+    margin-left: 7.5%;
+    margin-right: 7.5%;
+}
+.c img{
+    width: 100%;
+    height:auto;
+}

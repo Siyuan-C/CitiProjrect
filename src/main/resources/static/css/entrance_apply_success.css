@@ -1,0 +1,37 @@
+.main{
+    background-image: url("../resource/u181.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: none;
+    text-align: center;
+}
+.div1{
+    border-radius:10px;
+    background-color: white;
+    border:gray solid 1px;
+    margin-top:10%;
+}
+.submitText{
+    margin-top:18%;
+}
+.h3_1{
+    color:black;
+    text-align: center;
+    margin-bottom:20%;
+    padding-top: 1%;
+}
+.main_button{
+    border: none;
+    text-align: center;
+    width:60%;
+    background-color:rgb(81,81,229);
+    border-radius:10px;
+    padding-top:3%;
+    padding-bottom: 3%;
+    font-weight: bold;
+    color: white;
+    margin-bottom:5%;
+}
+.button1{
+    margin-bottom:15%;
+}

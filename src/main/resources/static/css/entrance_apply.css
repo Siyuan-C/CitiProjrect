@@ -1,0 +1,60 @@
+.background{
+    background-image: url("../resource/u181.png");
+    background-repeat: no-repeat;
+    border: none;
+    background-color: rgba(223, 223, 223, 0.4);
+    padding: 30px;
+}
+.div1{
+    padding: 5px;
+    border-radius:10px;
+    background-color: white;
+    border: none;
+    box-shadow: 2px 3px 2px #cccccc;
+}
+
+.h3_1{
+    padding: 10px 0;
+    font-size: 2em;
+    text-indent: 2em;
+    color:black;
+    text-align: center;
+    font-weight:bold;
+}
+
+.input-label{
+    margin-left:180px;
+    margin-bottom:20px;
+    margin-right:20px;
+    padding: 5px;
+}
+
+.input-regulation{
+    margin-top:2%;
+    margin-left:10%;
+    margin-bottom:15px;
+    columns: 30;
+    font-size: large;
+    padding: 5px;
+}
+
+.input-regulation1{
+    margin-top:2%;
+    margin-left:6%;
+    margin-bottom:15px;
+    columns: 30;
+    font-size: large;
+    padding: 5px;
+}
+.main_button{
+    border: none;
+    text-align: center;
+    width:20%;
+    height:50px;
+    background-color:rgb(81,81,229);
+    border-radius:10px;
+    font-size:large;
+    color: white;
+    margin-bottom:5%;
+    margin-left:40%;
+}

@@ -1,0 +1,204 @@
+/*定义全文两端空白div*/
+/*定义头部div*/
+.div2{
+    /*height:1000px;*/
+    background-image: url("../resource/1.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+}
+/*定义divider*/
+.divider{
+    border-left: 2px white solid;
+    width: 0;
+    height: 1.5em;
+    margin:.5em 0;
+}
+
+.head-tag{
+    margin: 0 10px;
+    padding: 0 10px;
+}
+
+/*定义仓单宝图标格式*/
+.img1{
+    margin-left: 30px;
+    height: 50px;
+    width: auto;
+}
+
+
+.nav-link{
+    color: white;
+}
+
+/*实现圆角按钮：立即体验*/
+.div3{
+    margin-top: 50px;
+    margin-left: 15%;
+    width:30%;
+}
+.btn1 {
+    color: black;
+    background-color: white;
+    border:0px;
+    font-weight: bold;
+    padding: 10px 35px;
+}
+.btn1:hover, .btn1:focus, .btn1:active, .btn1t.active, .open .dropdown-toggle.btnl {
+    color: #fff;
+    background-color: #3276b1;
+    border:0px;
+    font-weight: bold;
+    padding: 10px 35px;
+}
+
+/*实现中间圆角矩形部分*/
+.roundedRectangle{
+    margin-left: 12.5%;
+    width: 75%;
+    margin-top: 100px;
+    background: whitesmoke;
+    border-width: 1px;
+    border-style: solid;
+    border-color: lightgrey;
+    border-radius: 10px;
+}
+
+.roundedRectangle h2{
+    margin-top: 50px;
+    text-align:center;
+    font-weight: bolder;
+    color: dimgray;
+}
+
+.roundedRectangle h6{
+    text-align:center;
+    font-weight: bolder;
+    color: lightgrey;
+}
+
+.roundedRectangle p{
+    margin-top: 30px;
+    margin-bottom: 50px;
+    margin-left: 10%;
+    margin-right: 10%;
+    color: dimgray;
+}
+
+/*我们的优势*/
+.div4{
+    margin-top: 150px;
+    height: 1500px;
+}
+
+.div4 h2{
+    text-align:center;
+    font-weight: bolder;
+    color: dimgray;
+}
+
+.div4 h6{
+    text-align:center;
+    font-weight: bolder;
+    color: lightgrey;
+}
+
+.div4 img{
+    margin-left: 15%;
+    width:70%;
+    height: auto;
+}
+
+/*奇数项*/
+.div5{
+    margin-top: 100px;
+    margin-left: 15%;
+    width:70%;
+    height:350px;
+}
+
+.div5 img{
+    margin-left: 0%;
+    float: left;
+    width:45%;
+    height:auto;
+}
+
+.div5 h3{
+    float: left;
+    margin-top: 5%;
+    margin-left: 5%;
+    color: dimgray;
+
+}
+
+.div5 p{
+    float: left;
+    margin-top: 3%;
+    margin-left: 5%;
+    width: 50%;
+    color: dimgray;
+}
+
+/*偶数项*/
+.div6{
+    margin-top: 100px;
+    margin-left: 15%;
+    width:70%;
+    height:350px;
+}
+
+.div6 img{
+    margin-left: 5%;
+    margin-right: 0%;
+    float: right;
+    width:45%;
+    height:auto;
+}
+
+.div6 h3{
+    float: left;
+    width: 50%;
+    margin-top: 4%;
+    margin-left: 0%;
+    color: dimgray;
+
+}
+
+.div6 p{
+    float: left;
+    margin-top: 3%;
+    margin-left: 0%;
+    width: 50%;
+    color: dimgray;
+}
+
+/*蓝色矩形条*/
+.blue span{
+    border-bottom: 5px solid #0081EF;
+}
+
+
+.footer1{
+    /*padding: 10px 0;*/
+    background-color: cornflowerblue;
+}
+
+.foot-tag{
+    font-size: small;
+    padding: 5px 0;
+}
+
+.foot-tag > p > a{
+    color: white;
+    text-decoration: none;
+}
+
+.foot-tag-color{
+    color: white;
+}
+
+.row{
+    padding: 10px 0;
+}

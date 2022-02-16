@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"  href="css/home.css">
+</head>
+<body>
+<div class="div1">
+    <div class="div2">
+        <nav class="navbar navbar-expand-lg navbar-ligh nav1">
+            <a class="navbar-brand" href="#">
+                <img class="img1" src="resource/2.png" alt="logo"  >
+            </a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item head-tag active"><a class="nav-link" href="/after_login"><font>首页</font></a></li>
+                    <li class="nav-item head-tag"><a class="nav-link " href="/business"><font>业务大厅</font></a></li>
+                    <li class="nav-item head-tag"><a class="nav-link " href="/about_us"><font>关于我们</font></a></li>
+                </ul>
+
+                <ul class="navbar-nav">
+                    <li class="nav-item head-tag">
+                        <a class="nav-link" href="javascript:void(0);">
+                            <img src="resource/u92.png" alt="app">
+                            <font>手机App</font>
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="nav-item head-tag">
+                        <a class="nav-link" th:href="'my_info?name=' + ${session.loginUser}">
+                            <font><p th:text="${session.loginUser}+的个人空间"></p></font>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+
+        <div class="div3">
+            <h1><font color="white">一级标题</font></h1>
+            <br>
+            <p><font color="white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.</font></p>
+            <br>
+            <a type="button" class="btn btn1" th:href="@{'/certification?Name='+${name}}"><font size="3">立即体验</font></a>
+        </div>
+
+        <div class="roundedRectangle">
+            <h2>产品简介</h2>
+            <h6>PRODUCT INTRODUCTION</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien.</p>
+        </div>
+
+    </div>
+
+    <div class="div4">
+        <h2>我们的优势</h2>
+        <h6>OUR ADVANTAGE</h6>
+        <div class="div5">
+            <img src="resource/4.png">
+            <h3 class="blue"><span>仓单上链</span>，安全保靠</h3>
+            <p>打破了传统仓单的形式，将仓单流转的全周期数据均会写入区块链当中，所有流转数据上链之后无法篡改。货物的入库、在库、出库等信息可以通过物联网进行采集，并将生成的hash值实时上链，确保仓单源头数据无法造假。</p>
+        </div>
+        <img src="resource/7.png">
+        <div class="div6">
+            <h3 class="blue"><span>数据共享</span>，面向大众</h3>
+            <img src="resource/5.png">
+            <p>区块链分布式网络的特点，可以打通不同主体之间的数据壁垒，实现信息和数据共享。数据不会仅仅存在于某一个主体手中，而是所有人都可以看到，不用重复向多个主体汇报情况。利用区块链分布式存储技术，所有参与节点均会保存全部仓单数据副本，参与节点可以通过身份秘钥进行仓单数据查验，打破传统模式下仓单数据的信息孤岛问题。</p>
+
+        </div>
+        <img src="resource/7.png">
+        <div class="div5">
+            <img src="resource/6.jpg">
+            <h3 class="blue"><span>仓单上链</span>，安全保靠</h3>
+            <p>打破了传统仓单的形式，将仓单流转的全周期数据均会写入区块链当中，所有流转数据上链之后无法篡改。货物的入库、在库、出库等信息可以通过物联网进行采集，并将生成的hash值实时上链，确保仓单源头数据无法造假。</p>
+        </div>
+    </div>
+
+
+    <footer class="container-fluid footer1">
+        <div class="row">
+            <div class="col-md-1 offset-1 foot-tag">
+                <p><a href="#">关于我们</a></p>
+            </div>
+            <div class="col-md-2 foot-tag">
+                <p><a href="#">法律声明及隐私政策</a></p>
+            </div>
+            <div class="col-md-1 foot-tag">
+                <p><a href="#">加入我们</a></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 offset-1 foot-tag foot-tag-color">
+                <address>Address/地址：辽宁省大连经济技术开发区图强街321号</address>
+            </div>
+            <div class="col-md-2 foot-tag foot-tag-color">
+                <p>P.C./邮编：116600</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 offset-1 foot-tag foot-tag-color">
+                <p>Tel/联系电话：020-000000 000-000000</p>
+            </div>
+            <div class="col-md-2 foot-tag foot-tag-color">
+                <p>Mail/邮箱：contact@fkadjkhsf.com</p>
+            </div>
+        </div>
+
+    </footer>
+
+</div>
+</body>
+</html>

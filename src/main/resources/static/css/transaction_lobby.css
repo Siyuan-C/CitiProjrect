@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.background{
+    background: url("../resource/u98.png");
+}
+.footer{
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.40);
+    height: 150px;
+    color: #ffffff;
+}
+.foot-tag > p > a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+}
+.foot-tag > p > a:hover {
+    color: #cccccc;
+}
+.foot-tag-color{
+    font-size: 13px;
+}
+.main{
+    background-size: cover;
+}
+.grey{
+    background-color: rgba(0, 0, 0, 0.40);
+}
+.label-head{
+    padding: 60px;
+    color: white;
+    font-size: 28px;
+}
+.caption>div{
+    padding-top: 60px;
+}
+.input-button{
+    position: absolute;
+    overflow: hidden;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+.label-file{
+    line-height: normal;
+    color: white;
+    background-color: #5151e5;
+    width: 240px;
+    height: 40px;
+    font-size: 16px;
+    border-radius: 10px;
+}
+.label-file:hover{
+    color: white;
+    background-color: #000033;
+}
+
+.caption{
+    height: 160px;
+}
+.content{
+   margin-bottom: 65px;
+}
+.business{
+    margin: 0 20px 20px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+.business>.row>label{
+
+    margin: 30px  auto;
+}
+.business>.row>img{
+    width: 60%;
+    height: 60%;
+    margin: auto;
+}
+.business>.row>span{
+    width: 80%;
+    margin: auto;
+    font-size: 13px;
+}
+
+
+.head-tag{
+    color: black;
+}

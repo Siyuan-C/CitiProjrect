@@ -1,0 +1,19 @@
+.background{
+    background-image: url("../resource/u55.png");
+}
+
+.return{
+    font-weight: bold;
+    font-size: large;
+    text-decoration: none;
+    margin: 30px 30px 50px;
+}
+
+.line{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.markdown{
+    font-size: large;
+}

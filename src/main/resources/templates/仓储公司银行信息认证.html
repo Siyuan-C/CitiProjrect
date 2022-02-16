@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>仓储公司信息验证</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <link rel="stylesheet" type="text/css" href="css/certi_new.css">
+
+    <style>
+        #s_password{
+            color: red;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            document.getElementById("my-submit").addEventListener("click", function () {
+                document.location.href="实名认证.html";
+            });
+            document.getElementById("kahao").onblur = checkPassword;
+        };
+        function checkPassword() {
+            //获取用户输入
+            let password = document.getElementById("kahao").value;
+            //定义正则表达式
+            let reg_uername = /^[0-9]{15}$/;
+            //判断是否符合规则
+            let flag = reg_uername.test(password);
+            let s_password = document.getElementById("s_password");
+
+            //提示信息
+            if (flag){
+                s_password.innerHTML="";
+            }else {
+                s_password.innerHTML="卡号格式有误"
+            }
+            return flag;
+        }
+    </script>
+
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-ligh shadow">
+    <a class="navbar-brand" href="#">
+        <img src="resource/blackLogo.png" alt="logo">
+    </a>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item head-tag active"><a class="nav-link" href="首页.html">首页</a></li>
+            <li class="nav-item head-tag"><a class="nav-link " href="javascript:void(0);">业务大厅</a></li>
+            <li class="nav-item head-tag"><a class="nav-link " href="javascript:void(0);">关于我们</a></li>
+        </ul>
+
+        <ul class="navbar-nav">
+            <li class="nav-item head-tag">
+                <a class="nav-link" href="javascript:void(0);">
+                    <img src="resource/u92.png" alt="app">
+                    手机App
+                </a>
+            </li>
+            <li class="nav-item head-tag">
+                <a class="nav-link" href="#">
+                    个人中心
+                </a>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+<div class="main">
+    <div id="whitebox" class="container">
+        <form th:action="@{'verification4?name='+${name}}" method="post" enctype="multipart/form-data">
+            <div class="row" id="box-head">
+                <div class="col-md-10 offset-md-1">
+                    <label id="box-title">
+                        <b>仓储公司信息验证</b>
+                    </label>
+                </div>
+            </div>
+            <div class="row" id="box-content">
+                <div class="col-md-11" id="box-content-left">
+                    <div class="row content-group">
+                        <div class="col-md-3 info">
+                            <label class="label-text">营业执照</label>
+                        </div>
+                        <div class="col-md-6 offset-md-1">
+                            <label class="btn label-file">点击上传营业执照照片
+                            <input type="file" name="license" class="input-file">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row content-group">
+                        <div class="col-md-3 info">
+                            <label class="label-text">花旗银行卡号</label>
+                        </div>
+                        <div class="col-md-6 offset-md-1">
+                            <input type="password" name="enterprise-name" class="form-control input-text" placeholder="请输入花旗银行卡号">
+
+                        </div>
+                    </div>
+                    <div class="row content-group">
+                        <div class="col-md-3 info">
+                            <label class="label-text">银行账户</label>
+                        </div>
+                        <div class="col-md-6 offset-md-1">
+                            <input type="password" name="enterprise-name" class="form-control input-text" placeholder="请输入银行账户">
+
+                        </div>
+                    </div>
+                    <div class="row content-group">
+                        <div class="col-md-3 info">
+                            <label class="label-text">银行开户名</label>
+                        </div>
+                        <div class="col-md-6 offset-md-1">
+                            <input type="password" name="enterprise-name" class="form-control input-text" placeholder="请输入银行开户名">
+                        </div>
+                    </div>
+                    <div class="row content-group">
+                        <div class="col-md-3 info">
+                            <label class="label-text">公司名称</label>
+                        </div>
+                        <div class="col-md-6 offset-md-1">
+                            <input type="text" name="registration-number" class="form-control input-text" placeholder="请输入营业执照上的企业名称">
+                        </div>
+                    </div>
+                    <div class="row content-group">
+                        <div class="col-md-3 info">
+                            <label class="label-text">公司地址</label>
+                        </div>
+                        <div class="col-md-6 offset-md-1">
+                            <input type="text" name="registration-authority" class="form-control input-text" placeholder="请输入详细地址">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="box-foot">
+                <div class="btn btn-submit">
+                    <input type="submit" class="btn" id="my-submit" value="提交">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<footer class="container-fluid">
+    <div class="row">
+        <div class="col-md-1 offset-1 foot-tag">
+            <p><a href="#">关于我们</a></p>
+        </div>
+        <div class="col-md-2 foot-tag">
+            <p><a href="#">法律声明及隐私政策</a></p>
+        </div>
+        <div class="col-md-1 offset-1 foot-tag">
+            <p><a href="#">加入我们</a></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 offset-1 foot-tag foot-tag-color">
+            <address>Address/地址：辽宁省大连经济技术开发区图强街321号</address>
+        </div>
+        <div class="col-md-2 foot-tag foot-tag-color">
+            <p>P.C./邮编：116600</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 offset-1 foot-tag foot-tag-color">
+            <p>Tel/联系电话：020-000000 000-000000</p>
+        </div>
+        <div class="col-md-2 foot-tag foot-tag-color">
+            <p>Mail/邮箱：contact@fkadjkhsf.com</p>
+        </div>
+    </div>
+
+</footer>
+</body>
+</html>

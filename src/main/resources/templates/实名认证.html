@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>实名认证</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+<!--隐藏该name属性 再打开依然利用thymeleaf模板传递该name属性  做到一直知道当前用户是谁-->
+<input type="hidden" name="Name" th:value="${name}"/>
+<nav class="navbar navbar-expand-lg navbar-ligh shadow">
+    <a class="navbar-brand" href="#">
+        <img src="resource/blackLogo.png" alt="logo">
+    </a>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item head-tag active"><a class="nav-link" href="/after_login">首页</a></li>
+            <li class="nav-item head-tag"><a class="nav-link " href="/business">业务大厅</a></li>
+            <li class="nav-item head-tag"><a class="nav-link " href="/about_us">关于我们</a></li>
+        </ul>
+
+    <ul class="navbar-nav">
+            <li class="nav-item head-tag">
+                <a class="nav-link" href="javascript:void(0);">
+                    <img src="resource/u92.png" alt="app">
+                    手机App
+                </a>
+            </li>
+        <li class="divider"></li>
+
+        <li class="nav-item head-tag">
+            <a class="nav-link" href="/my_info">
+                个人中心
+            </a>
+        </li>
+        </ul>
+    </div>
+</nav>
+<!--
+主体部分
+-->
+<div class="main">
+    <!--设置透明层-->
+    <div class="stratum">
+        <div class = "row row1">
+            <div class="col-md-1">
+            </div>
+            <h3 class="h3_1 col-md-6">
+                个人中心 >> 实名认证
+            </h3>
+        </div>
+        <div class = "row row2">
+            <div class="col-md-3"></div>
+            <div class = "col-md-3 div1">
+                <h4 class="h4_1">
+                    普通企业认证
+                </h4>
+                <div class="button1">
+                    <!--精妙之处  利用thymeleaf模板进行后台的传值 将名字传给后台 后台再利用model传给前台-->
+                    <a type="button" class="main_button" th:href="@{'/business_corporation?Name='+${name}}">
+                        企业法人信息认证
+                    </a>
+                    <p class="main_p">
+                        需要准备营业执照、法人身份证
+                    </p>
+                </div>
+                <div class="button2">
+                    <a type="button" class="main_button" th:href="@{'/business_bank_corporation?Name='+${name}}">
+                        企业银行信息认证
+                    </a>
+                    <p class="main_p">
+                        需要准备营业执照、企业对公账户资料
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+            <div class = "col-md-3 div1">
+                <h4 class="h4_1">
+                    仓储公司认证
+                </h4>
+                <div class="button1">
+                    <a type="button" class="main_button" th:href="@{'/company_corporation?Name='+${name}}">
+                        法人信息认证
+                    </a>
+                    <p class="main_p">
+                        需要准备营业执照、法人身份证
+                    </p>
+                </div>
+                <div class="button2">
+                    <a type="button" class="main_button" th:href="@{'/bank_corporation?Name='+${name}}">
+                        银行信息认证
+                    </a>
+                    <p class="main_p">
+                        需要准备营业执照、企业对公账户资料
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<footer class="container-fluid">
+    <div class="row">
+        <div class="col-md-1 offset-1 foot-tag">
+            <p><a href="#">关于我们</a></p>
+        </div>
+        <div class="col-md-2 foot-tag">
+            <p><a href="#">法律声明及隐私政策</a></p>
+        </div>
+        <div class="col-md-1 offset-1 foot-tag">
+            <p><a href="#">加入我们</a></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 offset-1 foot-tag foot-tag-color">
+            <address>Address/地址：辽宁省大连经济技术开发区图强街321号</address>
+        </div>
+        <div class="col-md-2 foot-tag foot-tag-color">
+            <p>P.C./邮编：116600</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 offset-1 foot-tag foot-tag-color">
+            <p>Tel/联系电话：020-000000 000-000000</p>
+        </div>
+        <div class="col-md-2 foot-tag foot-tag-color">
+            <p>Mail/邮箱：contact@fkadjkhsf.com</p>
+        </div>
+    </div>
+
+</footer>
+</body>
+</html>

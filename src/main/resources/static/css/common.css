@@ -1,0 +1,71 @@
+input::-webkit-input-placeholder{
+    color: #cccccc;
+}
+
+input:-moz-placeholder{
+    color: #cccccc;
+}
+input::-moz-placeholder{
+    color: #cccccc;
+}
+input:-ms-input-placeholder{
+    color: #cccccc;
+}
+
+.submit{
+    padding: 20px 20px 0;
+}
+
+#submit-btn{
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #5151e5;
+    border: none;
+    color: #fff;
+    outline: none;
+}
+
+.disable{
+    cursor: no-drop; !important;
+}
+
+.hint{
+    font-size: small;
+    text-align: right;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+}
+
+.hint > a:hover{
+    text-decoration: #000000 underline;
+}
+
+.black-hint{
+    color: #000;
+}
+
+.warn{
+    position: absolute;
+    display: none;
+}
+
+.warn-active{
+    display: block !important;
+}
+
+
+.triangle-left{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-right: 10px solid red;
+    border-bottom: 5px solid transparent;
+}
+.warn-content{
+    display: inline;
+    color: red;
+}
