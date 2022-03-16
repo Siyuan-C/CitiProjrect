@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>搜索</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/general.css" rel="stylesheet">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/general.js"></script>
+    <style>
+        .logo { /*中间的logo图片*/
+            padding-top: 100px;
+            text-align: center;
+        }
+
+        .logo img {
+            width: 400px;
+            max-width: 100%;
+        }
+
+        .title { /*中间的蓝色文字*/
+            text-align: center;
+            margin-top: 20px;
+            font-weight: 800;
+            font-size: x-large;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: #199ED8;
+        }
+
+        .box-container {
+            text-align: center;
+        }
+
+        .box { /*搜索框的长度、宽度、圆角*/
+            display: inline-flex;
+            align-items: center;
+            padding: 5px;
+            max-width: 90%;
+            border: 1px solid #199ED8;
+            border-radius: 10px;
+        }
+
+        #query-text {
+            border: none;
+            outline: none;
+        }
+
+        .diagram {
+            margin: 40px auto;
+            width: 700px;
+            max-width: 90%;
+        }
+
+        .diagram a {
+            padding: 10px;
+            color: black;
+            text-decoration: none;
+            border: 1px solid gray;
+        }
+
+        .diagram img {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+<div id="nav"></div>  <!--导航栏模板-->
+
+<div class="logo">  <!--中间的logo图片-->
+    <img src="img/logo.jpg" class="mx-auto d-block">
+</div>
+
+<div class="title">  <!--中间的蓝色文字-->
+    <p>“花道”ESG评估平台</p>
+</div>
+
+<div class="box-container">  <!--整个搜索框的容器，用于使搜索框居中-->
+    <div class="box">  <!--整个搜索框-->
+        <input type="text" placeholder="请输入你想查询的内容" name="" id="query-text" value=""
+               style="width: 400px;height: 38px;border-radius: 10px;"/>
+        <!--输入框-->
+        <input type="image" src="img/search/search2.jpg" id="search-button"
+               style="width: 25px;height: 25px;border-radius: 50px;"/>
+        <!--输入框右侧查询的蓝色放大镜搜索按钮-->
+    </div>
+</div>
+
+<div class="diagram">
+    <div class="row row-cols-2 row-cols-md-4">
+        <a href="enterprise?entId=666">
+            <img src="img/search/u5.svg">
+            <span>XX企业</span>
+        </a>
+        <a href="enterprise?entId=666">
+            <img src="img/search/u5.svg">
+            <span>XX企业</span>
+        </a>
+        <a href="enterprise?entId=666">
+            <img src="img/search/u5.svg">
+            <span>XX企业</span>
+        </a>
+        <a href="enterprise?entId=666">
+            <img src="img/search/u5.svg">
+            <span>XX企业</span>
+        </a>
+    </div>
+    <div class="row row-cols-2 row-cols-md-4">
+        <a href="enterprise?entId=666">
+            <img src="img/search/u5.svg">
+            <span>XX企业</span>
+        </a>
+        <a href="enterprise?entId=666">
+            <img src="img/search/u5.svg">
+            <span>XX企业</span>
+        </a>
+        <a href="enterprise?entId=666">
+            <img src="img/search/u5.svg">
+            <span>XX企业</span>
+        </a>
+        <a href="enterprise?entId=666">
+            <img src="img/search/u5.svg">
+            <span>XX企业</span>
+        </a>
+    </div>
+    <div class="row row-cols-2 row-cols-md-4">
+        <a href="enterprise?entId=666">
+            <img src="img/search/u5.svg">
+            <span>XX企业</span>
+        </a>
+        <a href="enterprise?entId=666">
+            <img src="img/search/u5.svg">
+            <span>XX企业</span>
+        </a>
+        <a href="enterprise?entId=666">
+            <img src="img/search/u5.svg">
+            <span>XX企业</span>
+        </a>
+        <a href="enterprise?entId=666">
+            <img src="img/search/u5.svg">
+            <span>XX企业</span>
+        </a>
+    </div>
+</div>
+<div id="footer"></div>  <!--页脚模板-->
+<script>
+    window.onload = () => {
+        let inputBox = document.getElementById('query-text');
+        let button = document.getElementById('search-button');
+        button.addEventListener('click', () => {
+            let query = inputBox.value;
+            if (query)
+                window.location.href = 'result.html?query=' + query;
+        });
+    }
+</script>
+</body>
+</html>

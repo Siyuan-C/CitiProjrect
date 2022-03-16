@@ -19,7 +19,7 @@ import java.util.List;
 public class BaseController {
     @RequestMapping("/")
     public String index(){
-        return "首页";
+        return "index";
     }
     @RequestMapping("/after_login")
     public String after_login(HttpSession session,Model model){
@@ -29,16 +29,20 @@ public class BaseController {
     }
     @RequestMapping("/login")
     public String login(){
-        return "登录";
+        return "login";
     }
     @RequestMapping("/register")
     public String register(){
-        return "注册";
+        return "register";
     }
-    @RequestMapping("/business")
-    public String businessHall(){
-        return "业务大厅";
-    }
+    @RequestMapping("/enterprise")
+    public String enterprise(){return "enterprise";}
+    @RequestMapping("/search")
+    public String search(){return "search";}
+//    @RequestMapping("/business")
+//    public String businessHall(){
+//        return "业务大厅";
+//    }
 
 
 }

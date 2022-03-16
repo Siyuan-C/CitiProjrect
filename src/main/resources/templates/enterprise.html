@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>搜索企业结果</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/general.css" rel="stylesheet">
+    <link href="css/enterprise.css" rel="stylesheet">
+    <script src="javascript/bootstrap.bundle.min.js"></script>
+    <script src="javascript/jquery.min.js"></script>
+    <script src="javascript/general.js"></script>
+    <script src="javascript/enterprise.js"></script>
+</head>
+<body>
+<div id="nav"></div>
+<main>
+    <a href="search" onclick="window.history.back()">&lt;&lt;返回搜索界面</a>
+    <h1>XX企业</h1>
+    <section>
+        <div class="row">
+            <nav id="sidebar" class="col-auto">
+                <div class="side-top">
+                    <div>导航</div>
+                    <span class="d-md-none" data-bs-toggle="collapse" data-bs-target="#item-list"
+                          aria-expanded="false" aria-controls="item-list">展开</span>
+                </div>
+                <div id="item-list" class="collapse">
+                    <div class="side-item">
+                        <div onclick="routeTo('tables/overall.html')">整体ESG评估结果</div>
+                    </div>
+                    <div class="side-item">
+                        <div>环境研究</div>
+                        <span data-bs-toggle="collapse" data-bs-target="#achieve" aria-expanded="false"
+                              aria-controls="achieve">▼</span>
+                    </div>
+                    <div class="side-dropdown collapse" id="achieve">
+                        <div onclick="routeTo('tables/test.html')">环境绩效</div>
+                        <div onclick="routeTo('tables/test2.html')">环境披露</div>
+                        <div>环境投资</div>
+                    </div>
+                    <div class="side-item">
+                        <div>社会责任</div>
+                        <span data-bs-toggle="collapse" data-bs-target="#publish" aria-expanded="false"
+                              aria-controls="publish">▼</span>
+                    </div>
+                    <div class="side-dropdown collapse" id="publish">
+                        <div>生产安全</div>
+                        <div>客户及消费者权益保护</div>
+                        <div>公共关系和社会公益事业</div>
+                    </div>
+                    <div class="side-item">
+                        <div>公司治理</div>
+                        <span data-bs-toggle="collapse" data-bs-target="#invest" aria-expanded="false"
+                              aria-controls="invest">▼</span>
+                    </div>
+                    <div class="side-dropdown collapse" id="invest">
+                        <div>风险水平</div>
+                        <div>管理层治理</div>
+                        <div>经营水平</div>
+                    </div>
+                </div>
+            </nav>
+            <!--TODO 此div或为vue路由-->
+            <div class="col" id="router">
+            </div>
+        </div>
+    </section>
+</main>
+<div id="footer"></div>
+<script>
+    window.addEventListener('load', () => {
+        let itemList = document.getElementById('item-list');
+        if (window.innerWidth > 768) {
+            new bootstrap.Collapse(itemList, {
+                toggle: true
+            })
+        }
+        $('#router').load('tables/overall.html')
+    })
+    function routeTo(path) {
+        $('#router').load(path)
+    }
+</script>
+</body>
+</html>
