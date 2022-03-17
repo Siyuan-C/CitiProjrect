@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>搜索</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link href="css/general.css" rel="stylesheet">
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../CitiProjrect/src/main/resources/static/css/bootstrap.min.css">
+    <link href="../CitiProjrect/src/main/resources/static/css/general.css" rel="stylesheet">
+    <script src="../CitiProjrect/src/main/resources/static/js/bootstrap.bundle.min.js"></script>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
-    <script src="js/jquery.min.js"></script>
-    <script src="js/general.js"></script>
+    <script src="../CitiProjrect/src/main/resources/static/js/jquery.min.js"></script>
+    <script src="../CitiProjrect/src/main/resources/static/js/general.js"></script>
     <style>
         .logo { /*中间的logo图片*/
             padding-top: 100px;
@@ -47,17 +47,21 @@
             outline: none;
         }
 
+        #search-button {
+            cursor: pointer;
+        }
+
         .diagram {
             margin: 40px auto;
             width: 700px;
             max-width: 90%;
         }
 
-        .diagram a {
+        .diagram .random {
             padding: 10px;
             color: black;
-            text-decoration: none;
             border: 1px solid gray;
+            cursor: pointer;
         }
 
         .diagram img {
@@ -70,7 +74,7 @@
 <div id="nav"></div>  <!--导航栏模板-->
 
 <div class="logo">  <!--中间的logo图片-->
-    <img src="img/logo.jpg" class="mx-auto d-block">
+    <img src="img/logo.jpg" alt="花道ESG" class="mx-auto d-block">
 </div>
 
 <div class="title">  <!--中间的蓝色文字-->
@@ -82,66 +86,66 @@
         <input type="text" placeholder="请输入你想查询的内容" name="" id="query-text" value=""
                style="width: 400px;height: 38px;border-radius: 10px;"/>
         <!--输入框-->
-        <input type="image" src="img/search/search2.jpg" id="search-button"
-               style="width: 25px;height: 25px;border-radius: 50px;"/>
+        <img src="img/search/search2.jpg" alt="搜索" id="search-button"
+             style="width: 25px;height: 25px;border-radius: 50px;"/>
         <!--输入框右侧查询的蓝色放大镜搜索按钮-->
     </div>
 </div>
 
 <div class="diagram">
     <div class="row row-cols-2 row-cols-md-4">
-        <a href="enterprise.html?entId=666">
-            <img src="img/search/u5.svg">
+        <div class="random" data-entid="666">
+            <img src="img/search/u5.svg" alt="XX企业">
             <span>XX企业</span>
-        </a>
-        <a href="enterprise.html?entId=666">
-            <img src="img/search/u5.svg">
+        </div>
+        <div class="random" data-entid="666">
+            <img src="img/search/u5.svg" alt="XX企业">
             <span>XX企业</span>
-        </a>
-        <a href="enterprise.html?entId=666">
-            <img src="img/search/u5.svg">
+        </div>
+        <div class="random" data-entid="666">
+            <img src="img/search/u5.svg" alt="XX企业">
             <span>XX企业</span>
-        </a>
-        <a href="enterprise.html?entId=666">
-            <img src="img/search/u5.svg">
+        </div>
+        <div class="random" data-entid="666">
+            <img src="img/search/u5.svg" alt="XX企业">
             <span>XX企业</span>
-        </a>
+        </div>
     </div>
     <div class="row row-cols-2 row-cols-md-4">
-        <a href="enterprise.html?entId=666">
-            <img src="img/search/u5.svg">
+        <div class="random" data-entid="666">
+            <img src="img/search/u5.svg" alt="XX企业">
             <span>XX企业</span>
-        </a>
-        <a href="enterprise.html?entId=666">
-            <img src="img/search/u5.svg">
+        </div>
+        <div class="random" data-entid="666">
+            <img src="img/search/u5.svg" alt="XX企业">
             <span>XX企业</span>
-        </a>
-        <a href="enterprise.html?entId=666">
-            <img src="img/search/u5.svg">
+        </div>
+        <div class="random" data-entid="666">
+            <img src="img/search/u5.svg" alt="XX企业">
             <span>XX企业</span>
-        </a>
-        <a href="enterprise.html?entId=666">
-            <img src="img/search/u5.svg">
+        </div>
+        <div class="random" data-entid="666">
+            <img src="img/search/u5.svg" alt="XX企业">
             <span>XX企业</span>
-        </a>
+        </div>
     </div>
     <div class="row row-cols-2 row-cols-md-4">
-        <a href="enterprise.html?entId=666">
-            <img src="img/search/u5.svg">
+        <div class="random" data-entid="666">
+            <img src="img/search/u5.svg" alt="XX企业">
             <span>XX企业</span>
-        </a>
-        <a href="enterprise.html?entId=666">
-            <img src="img/search/u5.svg">
+        </div>
+        <div class="random" data-entid="666">
+            <img src="img/search/u5.svg" alt="XX企业">
             <span>XX企业</span>
-        </a>
-        <a href="enterprise.html?entId=666">
-            <img src="img/search/u5.svg">
+        </div>
+        <div class="random" data-entid="666">
+            <img src="img/search/u5.svg" alt="XX企业">
             <span>XX企业</span>
-        </a>
-        <a href="enterprise.html?entId=666">
-            <img src="img/search/u5.svg">
+        </div>
+        <div class="random" data-entid="666">
+            <img src="img/search/u5.svg" alt="XX企业">
             <span>XX企业</span>
-        </a>
+        </div>
     </div>
 </div>
 <div id="footer"></div>  <!--页脚模板-->
@@ -154,6 +158,13 @@
             if (query)
                 window.location.href = 'result.html?query=' + query;
         });
+
+        let random = document.getElementsByClassName('random');
+        for (let i of random) {
+            i.addEventListener('click', () => {
+                window.location.href = 'enterprise.html?entId=' + i.dataset.entid;
+            });
+        }
     }
 </script>
 </body>

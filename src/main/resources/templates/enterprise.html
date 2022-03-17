@@ -4,18 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
     <title>搜索企业结果</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/general.css" rel="stylesheet">
-    <link href="css/enterprise.css" rel="stylesheet">
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/general.js"></script>
-    <script src="js/enterprise.js"></script>
+    <link href="../CitiProjrect/src/main/resources/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../CitiProjrect/src/main/resources/static/css/general.css" rel="stylesheet">
+    <link href="../CitiProjrect/src/main/resources/static/css/enterprise.css" rel="stylesheet">
+    <script src="../CitiProjrect/src/main/resources/static/js/bootstrap.bundle.min.js"></script>
+    <script src="../CitiProjrect/src/main/resources/static/js/jquery.min.js"></script>
+    <script src="../CitiProjrect/src/main/resources/static/js/general.js"></script>
 </head>
 <body>
 <div id="nav"></div>
 <main>
-    <a href="#" onclick="window.history.back()">&lt;&lt;返回搜索界面</a>
+    <span id="back" onclick="window.history.back()">&lt;&lt;返回搜索界面</span>
     <h1>XX企业</h1>
     <section>
         <div class="row">
@@ -74,12 +73,12 @@
         if (window.innerWidth > 768) {
             new bootstrap.Collapse(itemList, {
                 toggle: true
-            })
+            });
         }
-        $('#router').load('tables/overall.html')
-    })
+        $('#router').load('tables/overall.html');
+    });
     function routeTo(path) {
-        $('#router').load(path)
+        $('#router').load(path);
     }
 </script>
 </body>

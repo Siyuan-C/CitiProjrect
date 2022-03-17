@@ -1,7 +1,6 @@
 package com.dlut.citiproject.Bean;
 
 import org.apache.catalina.User;
-import sun.dc.pr.PRError;
 
 import javax.persistence.*;
 
