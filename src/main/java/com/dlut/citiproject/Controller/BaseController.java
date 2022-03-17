@@ -25,7 +25,7 @@ public class BaseController {
     public String after_login(HttpSession session,Model model){
         String name = (String) session.getAttribute("loginUser");
         model.addAttribute("name",name);
-        return "首页-登录后";
+        return "index";
     }
     @RequestMapping("/login")
     public String login(){

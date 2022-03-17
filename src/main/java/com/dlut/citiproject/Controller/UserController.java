@@ -31,7 +31,7 @@ public class UserController {
         if(userRepository.existsByName(username)){    //若存在此用户名  不允许重复注册
             message1 = "用户已存在，请重新输入！";
             model.addAttribute("message1", message1);
-            return "注册";
+            return "register";
         }else{          //不存在此用户名，允许注册
             UserBean userBean=new UserBean(username,password,email);
             userRepository.save(userBean);
@@ -46,7 +46,7 @@ public class UserController {
         if(username.equals("")){
             message2 = "请输入用户名！";
             model.addAttribute("message2", message2);
-            return "登录";
+            return "login";
         }
         if(storage_corporationRepository.existsByName(username)){
             Storage_corporation s = storage_corporationRepository.getStorage_corporationByName(username);
@@ -65,7 +65,7 @@ public class UserController {
             //提示前端不存在
             message2 = "该用户不存在！";
             model.addAttribute("message2", message2);
-            return "登录";
+            return "login";
         }else{
             UserBean userBean=userRepository.findUserBeanByName(username);
             //用户存在且密码相同
@@ -75,12 +75,12 @@ public class UserController {
                 model.addAttribute("name",username);
                 session.setAttribute("loginUser",username);
                 System.out.println(session);
-                return "首页-登录后";
+                return "index";
             }else{   //如果密码与数据库相同   则提示前端用户名/密码错误
                 System.out.println(userBean.getPassword()+"\n"+password);
                 message3 = "密码有误！";
                 model.addAttribute("message3", message3);
-                return "登录";
+                return "login";
             }
         }
     }
