@@ -42,16 +42,18 @@
             border-radius: 10px;
         }
 
-        #query-text {
+        #query-text { /*文本输入框*/
             border: none;
             outline: none;
         }
 
-        #search-button {
-            cursor: pointer;
+        #search-button { /*搜索按钮*/
+            padding: 0;
+            background-color: transparent;
+            border: none;
         }
 
-        .diagram {
+        .diagram { /*随机企业推荐*/
             margin: 40px auto;
             width: 700px;
             max-width: 90%;
@@ -83,17 +85,17 @@
 </div>
 
 <div class="box-container">  <!--整个搜索框的容器，用于使搜索框居中-->
-    <div class="box">  <!--整个搜索框-->
-        <form class="input_box" method="get" action="/search">
-            <input type="text" placeholder="请输入你想查询的内容" name="enterprise_name" id="query-text" value=""
-                style="width: 400px;height: 38px;border-radius: 10px;"/>
-            <!--输入框-->
-            <img src="img/search/search2.jpg" alt="搜索" id="search-button"
-                style="width: 25px;height: 25px;border-radius: 50px;"/>
-            <p style="color:red" th:text="${message}"th:if="${not #strings.isEmpty(message)}"></p>
-        </form>
+    <form action="/search" class="box">  <!--整个搜索框-->
+        <input type="text" placeholder="请输入你想查询的内容" name="query" id="query-text" value=""
+               style="width: 400px;height: 38px;border-radius: 10px;"/>
+        <!--输入框-->
+        <button type="submit" id="search-button">
+            <img src="img/search/search2.jpg" alt="搜索"
+                 style="width: 25px;height: 25px;border-radius: 50px;"/>
+        </button>
+        <p style="color:blue" th:text="${message}"th:if="${not #strings.isEmpty(message)}"></p>
         <!--输入框右侧查询的蓝色放大镜搜索按钮-->
-    </div>
+    </form>
 </div>
 
 <div class="diagram container">
@@ -174,22 +176,14 @@
 </div>
 <div id="footer"></div>  <!--页脚模板-->
 <script>
-<!--    window.onload = () => {-->
-<!--        let inputBox = document.getElementById('query-text');-->
-<!--        let button = document.getElementById('search-button');-->
-<!--        button.addEventListener('click', () => {-->
-<!--            let query = inputBox.value;-->
-<!--            if (query)-->
-<!--                window.location.href = 'result.html?query=' + query;-->
-<!--        });-->
-
-<!--        let random = document.getElementsByClassName('random');-->
-<!--        for (let i of random) {-->
-<!--            i.addEventListener('click', () => {-->
-<!--                window.location.href = 'enterprise.html?entId=' + i.dataset.entid;-->
-<!--            });-->
-<!--        }-->
-<!--    }-->
+    window.onload = () => {
+        let random = document.getElementsByClassName('random');
+        for (let i of random) {
+            i.addEventListener('click', () => {
+                window.location.href = 'enterprise.html?entId=' + i.dataset.entid;
+            });
+        }
+    }
 </script>
 </body>
 </html>

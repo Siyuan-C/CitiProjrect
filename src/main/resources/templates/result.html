@@ -20,16 +20,18 @@
             border-radius: 10px;
         }
 
-        #query-text {
+        #query-text { /*文本输入框*/
             border: none;
             outline: none;
         }
 
-        #search-button {
-            cursor: pointer;
+        #search-button { /*搜索按钮*/
+            padding: 0;
+            background-color: transparent;
+            border: none;
         }
 
-        .result {
+        .result { /*结果列表*/
             margin: 10px 0;
         }
 
@@ -56,62 +58,46 @@
 <body>
 <div id="nav"></div>
 <main>
-    <div class="box-container">  <!--整个搜索框的容器，用于使搜索框居中-->
-        <div class="box">  <!--整个搜索框-->
-            <input type="text" placeholder="请输入你想查询的内容" name="" id="query-text" value=""
-                   style="width: 500px;height: 38px;border-radius: 10px;"/>
-            <!--输入框-->
-            <img src="img/search/查找_u4.svg" alt="搜索" id="search-button"
-                 style="width: 25px;height: 25px;border-radius: 50px;"/>
-            <!--输入框右侧查询的蓝色放大镜搜索按钮-->
-        </div>
-    </div>
+<!--    <div class="box-container">  &lt;!&ndash;整个搜索框的容器，用于使搜索框居中&ndash;&gt;-->
+<!--        <form action="" class="box">  &lt;!&ndash;整个搜索框&ndash;&gt;-->
+<!--            <input type="text" placeholder="请输入你想查询的内容" name="" id="query-text" value=""-->
+<!--                   style="width: 500px;height: 38px;border-radius: 10px;"/>-->
+<!--            &lt;!&ndash;输入框&ndash;&gt;-->
+<!--            <button type="submit" id="search-button">-->
+<!--                <img src="img/search/查找_u4.svg" alt="搜索"-->
+<!--                     style="width: 25px;height: 25px;border-radius: 50px;"/>-->
+<!--            </button>-->
+<!--            &lt;!&ndash;输入框右侧查询的蓝色放大镜搜索按钮&ndash;&gt;-->
+<!--        </form>-->
+<!--    </div>-->
     <p style="color: gray;">花道为您找到相关结果如下</p>
-    <div  th:each=" enterPriseName: ${enterPriseNames}">
-
-        <div class="result" th:text="${enterPriseName}">
-            <h5><span class="matched">平安</span>银行</h5>-->
-            <div class="detail">-->
-                <img src="img/search/u5.svg" alt="平安银行">-->
-                <p>平安银行ESG评估结果<br>环境研究、社会责任、公司治理</p>-->
-            </div>-->
-
+    <div th:each="sale : ${saleList}" >
+        <div class="result" data-entid="666">
+            <h5><span class="matched">平安</span>银行</h5>
+            <div class="detail">
+                <img src="img/search/u5.svg" alt="平安银行">
+                <p>平安银行ESG评估结果<br>环境研究、社会责任、公司治理</p>
+            </div>
         </div>
-<!--        <div class="result" data-entid="666">-->
-<!--            <h5><span class="matched">平安</span>银行</h5>-->
-<!--            <div class="detail">-->
-<!--                <img src="img/search/u5.svg" alt="平安银行">-->
-<!--                <p>平安银行ESG评估结果<br>环境研究、社会责任、公司治理</p>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="result" data-entid="666">-->
-<!--            <h5><span class="matched">平安</span>银行</h5>-->
-<!--            <div class="detail">-->
-<!--                <img src="img/search/u5.svg" alt="平安银行">-->
-<!--                <p>平安银行ESG评估结果<br>环境研究、社会责任、公司治理</p>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="result" data-entid="666">-->
-<!--            <h5><span class="matched">平安</span>银行</h5>-->
-<!--            <div class="detail">-->
-<!--                <img src="img/search/u5.svg" alt="平安银行">-->
-<!--                <p>平安银行ESG评估结果<br>环境研究、社会责任、公司治理</p>-->
-<!--            </div>-->
-<!--        </div>-->
+        <div class="result" data-entid="666">
+            <h5><span class="matched">平安</span>银行</h5>
+            <div class="detail">
+                <img src="img/search/u5.svg" alt="平安银行">
+                <p>平安银行ESG评估结果<br>环境研究、社会责任、公司治理</p>
+            </div>
+        </div>
+        <div class="result" data-entid="666">
+            <h5><span class="matched">平安</span>银行</h5>
+            <div class="detail">
+                <img src="img/search/u5.svg" alt="平安银行">
+                <p>平安银行ESG评估结果<br>环境研究、社会责任、公司治理</p>
+            </div>
+        </div>
     </div>
 </main>
 <div id="footer"></div>
 <script>
     window.onload = () => {
-        let inputBox = document.getElementById('query-text');
-        inputBox.value = getQueryVariable('query');
-        let button = document.getElementById('search-button');
-        button.addEventListener('click', () => {
-            let query = inputBox.value;
-            if (query)
-                window.location.href = 'result.html?query=' + query;
-        });
-
         let result = document.getElementsByClassName('result');
         for (let i of result) {
             console.log(i.getElementsByTagName('a')[0])
