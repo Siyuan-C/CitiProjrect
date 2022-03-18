@@ -43,6 +43,14 @@ public class BaseController {
 //    public String businessHall(){
 //        return "业务大厅";
 //    }
+    //显示个人信息，repository未设置 李季桥
+//    @RequestMapping("/my_account")
+//    public String my_account(HttpSession session,Model model){
+//        String name = (String) session.getAttribute("loginUser");
+//        ArrayList<WH_application> wh_saleArrayList = wh_applicationRepository.findWH_applicationsByName4(name);
+//        model.addAttribute("saleList",wh_saleArrayList);
+//        return "my_account";
+//    }
 
 
 }

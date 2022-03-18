@@ -3,11 +3,11 @@ package com.dlut.citiproject.Bean;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "storage_corporation")
+//@Table(name = "storage_corporation")
 public class Storage_corporation {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    //属性
+//    @GeneratedValue(strategy= GenerationType.AUTO)
+//    //属性
     private int id;
     private String name;
     private String password;

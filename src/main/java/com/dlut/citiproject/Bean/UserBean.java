@@ -5,10 +5,10 @@ import org.apache.catalina.User;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "user")
+//@Table(name = "user")
 public class UserBean {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+//    @GeneratedValue(strategy= GenerationType.AUTO)
     //属性
     private int id;
     private String name;
