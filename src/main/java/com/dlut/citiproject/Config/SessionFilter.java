@@ -16,7 +16,7 @@ import java.io.IOException;
 public class SessionFilter implements Filter {
 
     //不需要登录就可以访问的路径(比如:注册登录等)
-    String[] includeUrls = new String[]{"/login","/","/register","/login_data","/mailService","/search","/enterprise","/s"};
+    String[] includeUrls = new String[]{"/login","/","/register","/login_data"};
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
