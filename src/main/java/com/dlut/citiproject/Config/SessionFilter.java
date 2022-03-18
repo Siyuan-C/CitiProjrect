@@ -34,12 +34,12 @@ public class SessionFilter implements Filter {
         if(!needFilter){
             filterChain.doFilter(servletRequest, servletResponse);
         }else {
-            // 验证登录状态
-            if(session != null){
-                filterChain.doFilter(servletRequest, servletResponse);
-            }else{
-                response.sendRedirect("/login");
-            }
+//            // 验证登录状态
+//            if(session != null){
+//                filterChain.doFilter(servletRequest, servletResponse);
+//            }else{
+//                response.sendRedirect("/login");
+//            }
         }
 
     }
