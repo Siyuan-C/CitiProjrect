@@ -52,5 +52,13 @@ public class BaseController {
 //        return "my_account";
 //    }
 
+    //企业上传信息
+    @RequestMapping("/upload")
+    public String upload(@RequestParam String Name, Model model){
+        model.addAttribute("name",Name);
+        System.out.println(Name);
+        return "upload";
+    }
+
 
 }
