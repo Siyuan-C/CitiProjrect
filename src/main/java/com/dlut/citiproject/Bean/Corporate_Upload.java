@@ -1,12 +1,14 @@
 package com.dlut.citiproject.Bean;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
-//企业需要上传的信息
-
+//企业上传信息表
+@Entity
+@Table(name = "企业上传信息表")
 public class Corporate_Upload {
-
+    @Id
     //属性
     private String EnvironmentalActions_Number;    //环保专项行动次数
     private String EnvironmentalInput_Costs;    //环保项目投入费用
