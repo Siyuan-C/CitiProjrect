@@ -1,8 +1,14 @@
 package com.dlut.citiproject.Bean;
 
-//source_环境披露_上市公司环境监管与认证披露情况表
-public class EnvironmentExposure_Regulation {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+//source_环境披露_上市公司环境监管与认证披露情况表
+@Entity
+@Table(name = "source_环境披露_上市公司环境监管与认证披露情况表")
+public class EnvironmentExposure_Regulation {
+    @Id
     //属性
     private String stkcd;   //证券代码
     private String EndDate; //统计截止日期

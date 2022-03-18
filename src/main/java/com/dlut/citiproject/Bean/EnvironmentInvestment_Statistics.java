@@ -1,8 +1,14 @@
 package com.dlut.citiproject.Bean;
 
-//source_环境投资_上市公司环境投资统计表
-public class EnvironmentInvestment_Statistics {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+//source_环境投资_上市公司环境投资统计表
+@Entity
+@Table(name = "source_环境投资_上市公司环境投资统计表")
+public class EnvironmentInvestment_Statistics {
+    @Id
     //属性
     private String stkcd;   //证券代码
     private String EndDate; //统计截止日期

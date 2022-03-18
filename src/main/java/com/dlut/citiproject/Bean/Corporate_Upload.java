@@ -1,6 +1,10 @@
 package com.dlut.citiproject.Bean;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 //企业需要上传的信息
+
 public class Corporate_Upload {
 
     //属性
