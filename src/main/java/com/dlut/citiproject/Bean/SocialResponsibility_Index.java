@@ -1,8 +1,14 @@
 package com.dlut.citiproject.Bean;
 
-//source_上市公司社会责任评价指标表
-public class SocialResponsibility_Index {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+//source_上市公司社会责任评价指标表
+@Entity
+@Table(name = "source_上市公司社会责任评价指标表")
+public class SocialResponsibility_Index {
+    @Id
     //属性
     private String stkcd;   //证券代码
     private String ShortName;   //股票简称

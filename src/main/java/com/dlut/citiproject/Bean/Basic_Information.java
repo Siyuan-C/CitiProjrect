@@ -1,8 +1,14 @@
 package com.dlut.citiproject.Bean;
 
-//source_公司基本情况文件
-public class Basic_Information {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+//source_公司基本情况文件
+@Entity
+@Table(name = "source_公司基本情况文件")
+public class Basic_Information {
+    @Id
     //属性
     private String stkcd;   //证券代码
     private String Stknme;  //证券中文简称

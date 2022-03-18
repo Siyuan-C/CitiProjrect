@@ -1,7 +1,15 @@
 package com.dlut.citiproject.Bean;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 //source_风险水平
+@Entity
+@Table(name = "source_风险水平")
 public class Risk_Level {
+    @Id
+    //属性
     private String stkcd;   //证券代码
     private String Accper;  //截止日期
     private String Typrep;  //报表类型编码

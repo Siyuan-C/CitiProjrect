@@ -3,7 +3,7 @@ package com.dlut.citiproject.Bean;
 import javax.persistence.*;
 
 @Entity
-//@Table(name = "storage_corporation")
+@Table(name = "storage_corporation")
 public class Storage_corporation {
     @Id
 //    @GeneratedValue(strategy= GenerationType.AUTO)

@@ -1,7 +1,16 @@
 package com.dlut.citiproject.Bean;
 
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 //source_环境绩效_上市公司资源消耗明细表
+@Entity
+@Table(name = "source_环境绩效_上市公司资源消耗明细表")
 public class ResourceConsumption_Details {
+    @Id
+    //属性
     private String stkcd;   //证券代码
     private String EndDate;     //统计截止日期
     private String InstitutionID;   //上市公司ID

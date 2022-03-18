@@ -1,7 +1,14 @@
 package com.dlut.citiproject.Bean;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 //source_环境绩效_上市公司环境绩效明细表
+@Entity
+@Table(name = "source_环境绩效_上市公司环境绩效明细表")
 public class EnvironmentAchievement_Details {
+    @Id
     //属性
     private String stkcd;   //证券代码
     private String EndDate; //统计截止日期

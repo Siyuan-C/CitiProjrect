@@ -5,7 +5,7 @@ import org.apache.catalina.User;
 import javax.persistence.*;
 
 @Entity
-//@Table(name = "user")
+@Table(name = "user")
 public class UserBean {
     @Id
 //    @GeneratedValue(strategy= GenerationType.AUTO)

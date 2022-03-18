@@ -1,7 +1,14 @@
 package com.dlut.citiproject.Bean;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 //source_财务指标
+@Entity
+@Table(name = "source_财务指标")
 public class Financial_Index {
+    @Id
     //属性
     private String stkcd;   //证券代码
     private String ShortName;   //证券简称

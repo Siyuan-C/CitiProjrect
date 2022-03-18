@@ -1,8 +1,14 @@
 package com.dlut.citiproject.Bean;
 
-//source_环境披露_上市公司环境信息披露载体信息表
-public class EnvironmentExposure_Carrier {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+//source_环境披露_上市公司环境信息披露载体信息表
+@Entity
+@Table(name = "source_环境披露_上市公司环境信息披露载体信息表")
+public class EnvironmentExposure_Carrier {
+    @Id
     //属性
     private String stkcd;   //证券代码
     private String EndDate; //统计截止日期
