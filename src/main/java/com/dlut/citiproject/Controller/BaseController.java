@@ -1,6 +1,8 @@
 package com.dlut.citiproject.Controller;
 
 import com.dlut.citiproject.Repository.*;
+import com.dlut.citiproject.Repository.LevelRepository;
+import com.dlut.citiproject.Bean.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,9 +19,23 @@ import java.util.List;
 
 @Controller
 public class BaseController {
+    //注入用户jpa操作接口
+    @Autowired
+    LevelRepository levelRepository;
+
+
+
+
+
+
+
     @RequestMapping("/")
     public String index(){
         return "index";
+    }
+    @RequestMapping("/s")
+    public String s(){
+        return "search";
     }
     @RequestMapping("/after_login")
     public String after_login(HttpSession session,Model model){
@@ -38,7 +54,18 @@ public class BaseController {
     @RequestMapping("/enterprise")
     public String enterprise(){return "enterprise";}
     @RequestMapping("/search")
-    public String search(){return "search";}
+    public String search(@RequestParam String enterprise_name, Model model){
+        String message = null;
+        ArrayList<String> enterPriseNames = levelRepository.findLevelByName(enterprise_name);
+        if(!enterPriseNames.isEmpty()){
+            model.addAttribute("enterPriseNames",enterPriseNames);
+            return "result";
+        }else{
+            message = "查询无相关企业！";
+            model.addAttribute("message",message);
+            return "search";
+        }
+    }
 //    @RequestMapping("/business")
 //    public String businessHall(){
 //        return "业务大厅";

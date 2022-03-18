@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>搜索</title>
@@ -84,11 +84,14 @@
 
 <div class="box-container">  <!--整个搜索框的容器，用于使搜索框居中-->
     <div class="box">  <!--整个搜索框-->
-        <input type="text" placeholder="请输入你想查询的内容" name="" id="query-text" value=""
-               style="width: 400px;height: 38px;border-radius: 10px;"/>
-        <!--输入框-->
-        <img src="img/search/search2.jpg" alt="搜索" id="search-button"
-             style="width: 25px;height: 25px;border-radius: 50px;"/>
+        <form class="input_box" method="get" action="/search">
+            <input type="text" placeholder="请输入你想查询的内容" name="enterprise_name" id="query-text" value=""
+                style="width: 400px;height: 38px;border-radius: 10px;"/>
+            <!--输入框-->
+            <img src="img/search/search2.jpg" alt="搜索" id="search-button"
+                style="width: 25px;height: 25px;border-radius: 50px;"/>
+            <p style="color:red" th:text="${message}"th:if="${not #strings.isEmpty(message)}"></p>
+        </form>
         <!--输入框右侧查询的蓝色放大镜搜索按钮-->
     </div>
 </div>
@@ -171,22 +174,22 @@
 </div>
 <div id="footer"></div>  <!--页脚模板-->
 <script>
-    window.onload = () => {
-        let inputBox = document.getElementById('query-text');
-        let button = document.getElementById('search-button');
-        button.addEventListener('click', () => {
-            let query = inputBox.value;
-            if (query)
-                window.location.href = 'result.html?query=' + query;
-        });
+<!--    window.onload = () => {-->
+<!--        let inputBox = document.getElementById('query-text');-->
+<!--        let button = document.getElementById('search-button');-->
+<!--        button.addEventListener('click', () => {-->
+<!--            let query = inputBox.value;-->
+<!--            if (query)-->
+<!--                window.location.href = 'result.html?query=' + query;-->
+<!--        });-->
 
-        let random = document.getElementsByClassName('random');
-        for (let i of random) {
-            i.addEventListener('click', () => {
-                window.location.href = 'enterprise.html?entId=' + i.dataset.entid;
-            });
-        }
-    }
+<!--        let random = document.getElementsByClassName('random');-->
+<!--        for (let i of random) {-->
+<!--            i.addEventListener('click', () => {-->
+<!--                window.location.href = 'enterprise.html?entId=' + i.dataset.entid;-->
+<!--            });-->
+<!--        }-->
+<!--    }-->
 </script>
 </body>
 </html>

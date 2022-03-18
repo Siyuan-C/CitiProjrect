@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -67,28 +67,37 @@
         </div>
     </div>
     <p style="color: gray;">花道为您找到相关结果如下</p>
-    <div>
-        <div class="result" data-entid="666">
-            <h5><span class="matched">平安</span>银行</h5>
-            <div class="detail">
-                <img src="img/search/u5.svg" alt="平安银行">
-                <p>平安银行ESG评估结果<br>环境研究、社会责任、公司治理</p>
-            </div>
+    <div  th:each=" enterPriseName: ${enterPriseNames}">
+
+        <div class="result" th:text="${enterPriseName}">
+            <h5><span class="matched">平安</span>银行</h5>-->
+            <div class="detail">-->
+                <img src="img/search/u5.svg" alt="平安银行">-->
+                <p>平安银行ESG评估结果<br>环境研究、社会责任、公司治理</p>-->
+            </div>-->
+
         </div>
-        <div class="result" data-entid="666">
-            <h5><span class="matched">平安</span>银行</h5>
-            <div class="detail">
-                <img src="img/search/u5.svg" alt="平安银行">
-                <p>平安银行ESG评估结果<br>环境研究、社会责任、公司治理</p>
-            </div>
-        </div>
-        <div class="result" data-entid="666">
-            <h5><span class="matched">平安</span>银行</h5>
-            <div class="detail">
-                <img src="img/search/u5.svg" alt="平安银行">
-                <p>平安银行ESG评估结果<br>环境研究、社会责任、公司治理</p>
-            </div>
-        </div>
+<!--        <div class="result" data-entid="666">-->
+<!--            <h5><span class="matched">平安</span>银行</h5>-->
+<!--            <div class="detail">-->
+<!--                <img src="img/search/u5.svg" alt="平安银行">-->
+<!--                <p>平安银行ESG评估结果<br>环境研究、社会责任、公司治理</p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="result" data-entid="666">-->
+<!--            <h5><span class="matched">平安</span>银行</h5>-->
+<!--            <div class="detail">-->
+<!--                <img src="img/search/u5.svg" alt="平安银行">-->
+<!--                <p>平安银行ESG评估结果<br>环境研究、社会责任、公司治理</p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="result" data-entid="666">-->
+<!--            <h5><span class="matched">平安</span>银行</h5>-->
+<!--            <div class="detail">-->
+<!--                <img src="img/search/u5.svg" alt="平安银行">-->
+<!--                <p>平安银行ESG评估结果<br>环境研究、社会责任、公司治理</p>-->
+<!--            </div>-->
+<!--        </div>-->
     </div>
 </main>
 <div id="footer"></div>
