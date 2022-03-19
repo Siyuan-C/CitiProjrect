@@ -3,7 +3,7 @@
     <div class="nav nav-tabs" id="nav-tab" role="tablist">
         <button class="nav-link active" id="download-tab" data-bs-toggle="tab"
                 data-bs-target="#download"
-                type="button" role="tab">数据下载
+                type="button" role="tab">详细数据
         </button>
         <button class="nav-link" id="intro-tab" data-bs-toggle="tab" data-bs-target="#intro"
                 type="button" role="tab">数据简介
@@ -12,7 +12,38 @@
 </nav>
 <div class="tab-content" id="nav-tabContent">
     <div class="tab-pane fade show active" id="download" role="tabpanel">
-        download
+        <div class="table-responsive">
+            <table class="table table-striped caption-top text-center">
+                <caption>环境研究_环境披露</caption>
+
+                <p>0表示未公布，1表示定性公布，2表示定量公布</p>
+                <thead>
+                <tr>
+                    <th scope="col">截止日期</th>
+                    <th scope="col">废水排放量</th>
+                    <th scope="col">COD排放量</th>
+                    <th scope="col">SO2排放量</th>
+                    <th scope="col">CO2排放量</th>
+                    <th scope="col">烟尘和粉尘排放量</th>
+                    <th scope="col">工业固废物产生量</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="temp : ${session.envExpo}">
+                    <!--                    <td scope="row" th:text="${enterPrise.getPerfProjectName()}"></td>-->
+                    <!--                    <td th:text="${enterPrise.getPerfValue()}"></td>-->
+                    <td scope="row" th:text="${temp.getEndDate()}"></td>
+                    <td th:text="${temp.getWasteWaterEmission()}"></td>
+                    <td th:text="${temp.getCODEmission()}"></td>
+                    <td th:text="${temp.getSO2Emission()}"></td>
+                    <td th:text="${temp.getCO2Emission()}"></td>
+                    <td th:text="${temp.getSootDustEmission()}"></td>
+                    <td th:text="${temp.getIndSolidWasteEmission()}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
     <div class="tab-pane fade" id="intro" role="tabpanel">
         intro

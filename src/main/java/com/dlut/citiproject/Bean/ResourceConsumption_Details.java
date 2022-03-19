@@ -10,6 +10,7 @@ import javax.persistence.Table;
 @Table(name = "source_环境绩效_上市公司资源消耗明细表")
 public class ResourceConsumption_Details {
     @Id
+    private int id;
     //属性
     private String stkcd;   //证券代码
     private String EndDate;     //统计截止日期

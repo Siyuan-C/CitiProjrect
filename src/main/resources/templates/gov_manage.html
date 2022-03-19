@@ -1,0 +1,61 @@
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <button class="nav-link active" id="download-tab" data-bs-toggle="tab"
+                data-bs-target="#download"
+                type="button" role="tab">详细数据
+        </button>
+        <button class="nav-link" id="intro-tab" data-bs-toggle="tab" data-bs-target="#intro"
+                type="button" role="tab">数据简介
+        </button>
+    </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="download" role="tabpanel">
+        <div class="table-responsive">
+            <table class="table table-striped caption-top text-center">
+                <caption>公司治理_经营水平</caption>
+                <thead>
+                <tr>
+                    <th scope="col">起止时间</th>
+                    <th scope="col">行业名称</th>
+                    <th scope="col">报表类型</th>
+                    <th scope="col">总资产</th>
+                    <th scope="col">总负债</th>
+                    <th scope="col">营业收入</th>
+                    <th scope="col">经营性净现金流</th>
+                    <th scope="col">总资产净利润率</th>
+                    <th scope="col">资产负债率</th>
+                    <th scope="col">账面市值比</th>
+<!--                    <th scope="col">管理费用率</th>-->
+<!--                    <th scope="col">非债务税盾</th>-->
+                    <th scope="col">所得税率</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="temp : ${session.finIndex}">
+                    <!--                    <td scope="row" th:text="${enterPrise.getPerfProjectName()}"></td>-->
+                    <!--                    <td th:text="${enterPrise.getPerfValue()}"></td>-->
+                    <td scope="row" th:text="${temp.getEndDate()}"></td>
+                    <td th:text="${temp.getIndustryName()}"></td>
+                    <td th:text="${temp.getStateType()}"></td>
+                    <td th:text="${temp.getTotalAssets()}"></td>
+                    <td th:text="${temp.getTotalLiabilities()}"></td>
+                    <td th:text="${temp.getOperatingRevenue()}"></td>
+                    <td th:text="${temp.getOperatingNetCashFlow()}"></td>
+                    <td th:text="${temp.getROA()}"></td>
+                    <td th:text="${temp.getAssetLiabilityRatio()}"></td>
+                    <td th:text="${temp.getBookToMarketRatio()}"></td>
+<!--                    <td th:text="${temp.getManagementExpenseRate()}"></td>-->
+<!--                    <td th:text="${temp.getNonDebtTaxShield()}"></td>-->
+                    <td th:text="${temp.getIncomeTaxTate()}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="intro" role="tabpanel">
+        intro
+    </div>
+</div>

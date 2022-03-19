@@ -9,6 +9,7 @@ import javax.persistence.Table;
 @Table(name = "source_管理层治理能力")
 public class Govern_Capacity {
     @Id
+    private int id;
     //属性
     private String stkcd;   //证券代码
     private String ShortName;   //证券简称
@@ -43,6 +44,50 @@ public class Govern_Capacity {
     private String StaffNumber;     //员工人数
     private String ProfitPerCapita;     //人均创利
     private String ExcessEmployeeRate;  //超额雇员率
+
+    @Override
+    public String toString() {
+        return "Govern_Capacity{" +
+                "id=" + id +
+                ", stkcd='" + stkcd + '\'' +
+                ", ShortName='" + ShortName + '\'' +
+                ", Enddate='" + Enddate + '\'' +
+                ", IndustryCode='" + IndustryCode + '\'' +
+                ", IndustryName='" + IndustryName + '\'' +
+                ", PropertyRightsNature='" + PropertyRightsNature + '\'' +
+                ", OwnershipProportion='" + OwnershipProportion + '\'' +
+                ", ControlProportion='" + ControlProportion + '\'' +
+                ", ControllerSeperation='" + ControllerSeperation + '\'' +
+                ", ContrshrProportion='" + ContrshrProportion + '\'' +
+                ", ContrshrNature='" + ContrshrNature + '\'' +
+                ", SharesBalance='" + SharesBalance + '\'' +
+                ", InsInvestorProp='" + InsInvestorProp + '\'' +
+                ", BankHoldProportion='" + BankHoldProportion + '\'' +
+                ", ISHoldBankShares='" + ISHoldBankShares + '\'' +
+                ", HoldBankSharesProp='" + HoldBankSharesProp + '\'' +
+                ", ISHoldOtherFinaShares='" + ISHoldOtherFinaShares + '\'' +
+                ", TOP3SumSalary='" + TOP3SumSalary + '\'' +
+                ", SumSalary='" + SumSalary + '\'' +
+                ", ConcurrentPosition='" + ConcurrentPosition + '\'' +
+                ", Mngmhldn='" + Mngmhldn + '\'' +
+                ", Boardsize='" + Boardsize + '\'' +
+                ", IndDirectorRatio='" + IndDirectorRatio + '\'' +
+                ", SupervisorSize='" + SupervisorSize + '\'' +
+                ", ExecutivesNumber='" + ExecutivesNumber + '\'' +
+                ", MaleRatio='" + MaleRatio + '\'' +
+                ", AverageAge='" + AverageAge + '\'' +
+                ", MngmFinancialBack='" + MngmFinancialBack + '\'' +
+                ", MngmOverseaBack='" + MngmOverseaBack + '\'' +
+                ", IsCocurP='" + IsCocurP + '\'' +
+                ", StaffNumber='" + StaffNumber + '\'' +
+                ", ProfitPerCapita='" + ProfitPerCapita + '\'' +
+                ", ExcessEmployeeRate='" + ExcessEmployeeRate + '\'' +
+                ", StaffIntensity='" + StaffIntensity + '\'' +
+                ", IndDirectorNetCentrality='" + IndDirectorNetCentrality + '\'' +
+                ", OneControlMany='" + OneControlMany + '\'' +
+                '}';
+    }
+
     private String StaffIntensity;  //员工密集度
     private String IndDirectorNetCentrality;    //独立董事网络中心度
     private String OneControlMany;  //是否存在一控多情况

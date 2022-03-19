@@ -8,6 +8,6 @@ import org.springframework.data.repository.query.Param;
 import java.util.ArrayList;
 
 public interface EnvironmentExposure_DebtRepository extends JpaRepository<EnvironmentExposure_Debt,Long> {
-    @Query(value = "SELECT * FROM source_环境披露_上市公司环境负债披露情况表 WHERE SHORTNAME = :name", nativeQuery = true)
-    ArrayList<EnvironmentExposure_Debt> findEnvironmentExposure_DebtByName(String name);
+    @Query(value = "SELECT * FROM source_环境披露_上市公司环境负债披露情况表 WHERE short_name = :name", nativeQuery = true)
+    ArrayList<EnvironmentExposure_Debt> findEnvironmentExposure_DebtByName(@Param("name")String name);
 }

@@ -3,7 +3,7 @@
     <div class="nav nav-tabs" id="nav-tab" role="tablist">
         <button class="nav-link active" id="download-tab" data-bs-toggle="tab"
                 data-bs-target="#download"
-                type="button" role="tab">数据下载
+                type="button" role="tab">详细数据
         </button>
         <button class="nav-link" id="intro-tab" data-bs-toggle="tab" data-bs-target="#intro"
                 type="button" role="tab">数据简介
@@ -17,22 +17,31 @@
                 <caption>环境绩效_上市公司资源消耗明细表</caption>
                 <thead>
                 <tr>
-                    <th scope="col">stkname</th>
-                    <th scope="col">Consumption</th>
+                    <th scope="col">截止日期</th>
+                    <th scope="col">具体环境绩效</th>
+                    <th scope="col">绩效指标</th>
+                    <th scope="col">单位</th>
+
                 </tr>
                 </thead>
                 <tbody>
                 <tr th:each="temp : ${session.envAchiDetail}">
 <!--                    <td scope="row" th:text="${enterPrise.getPerfProjectName()}"></td>-->
 <!--                    <td th:text="${enterPrise.getPerfValue()}"></td>-->
-                    <td scope="row" th:text="${temp.getPerfProjectName()}"></td>
+                    <td scope="row" th:text="${temp.getEndDate()}"></td>
+                    <td th:text="${temp.getPerfProjectName()}"></td>
                     <td th:text="${temp.getPerfValue()}"></td>
+                    <td th:text="${temp.getUnit()}"></td>
                 </tr>
                 </tbody>
             </table>
         </div>
     </div>
     <div class="tab-pane fade" id="intro" role="tabpanel">
-        intro
+        <h3>环境绩效_上市公司资源消耗明细表，包含数据：</h3>
+        <h4>截止日期</h4>
+        <h4>具体环境绩效</h4>
+        <h4>绩效指标</h4>
+        <h4>单位</h4>
     </div>
 </div>

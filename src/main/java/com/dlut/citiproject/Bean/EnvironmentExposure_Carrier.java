@@ -11,6 +11,20 @@ public class EnvironmentExposure_Carrier {
     @Id
     //属性
     private String stkcd;   //证券代码
+
+    @Override
+    public String toString() {
+        return "EnvironmentExposure_Carrier{" +
+                "stkcd='" + stkcd + '\'' +
+                ", EndDate='" + EndDate + '\'' +
+                ", InstitutionID='" + InstitutionID + '\'' +
+                ", ShortName='" + ShortName + '\'' +
+                ", AnnualReport='" + AnnualReport + '\'' +
+                ", CSRReport='" + CSRReport + '\'' +
+                ", EnvReport='" + EnvReport + '\'' +
+                '}';
+    }
+
     private String EndDate; //统计截止日期
     private String InstitutionID;   //上市公司ID
     private String ShortName;   //证券简称

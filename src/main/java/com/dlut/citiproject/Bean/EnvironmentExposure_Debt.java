@@ -9,8 +9,27 @@ import javax.persistence.Table;
 @Table(name = "source_环境披露_上市公司环境负债披露情况表")
 public class EnvironmentExposure_Debt {
     @Id
+    private int id;
     //属性
     private String stkcd;   //证券代码
+
+    @Override
+    public String toString() {
+        return "EnvironmentExposure_Debt{" +
+                "id=" + id +
+                ", stkcd='" + stkcd + '\'' +
+                ", EndDate='" + EndDate + '\'' +
+                ", InstitutionID='" + InstitutionID + '\'' +
+                ", ShortName='" + ShortName + '\'' +
+                ", WasteWaterEmission='" + WasteWaterEmission + '\'' +
+                ", CODEmission='" + CODEmission + '\'' +
+                ", SO2Emission='" + SO2Emission + '\'' +
+                ", CO2Emission='" + CO2Emission + '\'' +
+                ", SootDustEmission='" + SootDustEmission + '\'' +
+                ", IndSolidWasteEmission='" + IndSolidWasteEmission + '\'' +
+                '}';
+    }
+
     private String EndDate; //统计截止日期
     private String InstitutionID;   //上市公司ID
     private String ShortName;   //证券简称

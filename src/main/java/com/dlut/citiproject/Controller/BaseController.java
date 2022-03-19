@@ -28,7 +28,18 @@ public class BaseController {
     LevelRepository levelRepository;
     @Autowired
     EnvironmentAchievement_DetailsRepository EnvAchiRepo;
-
+    @Autowired
+    EnvironmentExposure_DebtRepository EnvExpRepo;
+    @Autowired
+    EnvironmentInvestment_DetailsRepository EnvInvRepo;
+    @Autowired
+    Financial_IndexRepository FinIndRepo;
+    @Autowired
+    Govern_CapacityRepository GovCapRepo;
+    @Autowired
+    Risk_LevelRepository RisLevRepo;
+    @Autowired
+    SocialResponsibility_IndexRepository SocResRepo;
 
 
     @RequestMapping("/")
@@ -63,8 +74,8 @@ public class BaseController {
     public String soc_customer(){return "soc_customer";}
     @RequestMapping("/soc_public")
     public String soc_public(){return "soc_public";}
-    @RequestMapping("/gov_ris")
-    public String gov_ris(){return "gov_ris";}
+    @RequestMapping("/gov_risk")
+    public String gov_risk(){return "gov_risk";}
     @RequestMapping("/gov_admin")
     public String gov_admin(){return "gov_admin";}
     @RequestMapping("/gov_manage")
@@ -118,14 +129,31 @@ public class BaseController {
         LevelBean enterPrise = levelRepository.findLevelByName1(enterprise_name);
         //EnvironmentAchievement_Details envAchi = new EnvironmentAchievement_Details();
         ArrayList<EnvironmentAchievement_Details> envAchiDetail = EnvAchiRepo.findEnvironmentAchievement_DetailsByName(enterprise_name);
-        for(int i=0;i<envAchiDetail.size();i++){
+        ArrayList<EnvironmentExposure_Debt> envExpo = EnvExpRepo.findEnvironmentExposure_DebtByName(enterprise_name);
+        ArrayList<EnvironmentInvestment_Details> envInves = EnvInvRepo.findEnvironmentInvestment_DetailsByName(enterprise_name);
+        ArrayList<SocialResponsibility_Index> socRes1 = SocResRepo.findSocialResponsibility_IndexByName0(enterprise_name);
+        ArrayList<SocialResponsibility_Index> socRes2 = SocResRepo.findSocialResponsibility_IndexByName1(enterprise_name);
+        ArrayList<SocialResponsibility_Index> socRes3 = SocResRepo.findSocialResponsibility_IndexByName2(enterprise_name);
+        ArrayList<Risk_Level> risLev = RisLevRepo.findRisk_LevelByName(enterprise_name);
+        ArrayList<Financial_Index> finIndex = FinIndRepo.findFinancial_IndexByName(enterprise_name);
+        ArrayList<Govern_Capacity> govCap = GovCapRepo.findGovern_CapacityByName(enterprise_name);
 
-            System.out.println(envAchiDetail.get(i).toString()+" "+i);
+        for(int i=0;i<govCap.size();i++){
+
+            System.out.println(govCap.get(i).toString()+" "+i);
         }
         //System.out.println(enterPrise.getE_level());
         model.addAttribute("enterprise",enterPrise);
         model.addAttribute("enterprise_name",enterprise_name);
         session.setAttribute("envAchiDetail",envAchiDetail);
+        session.setAttribute("envExpo",envExpo);
+        session.setAttribute("envInves",envInves);
+        session.setAttribute("socRes1",socRes1);
+        session.setAttribute("socRes2",socRes2);
+        session.setAttribute("socRes3",socRes3);
+        session.setAttribute("risLev",risLev);
+        session.setAttribute("finIndex",finIndex);
+        session.setAttribute("govCap",govCap);
 //        model.addAttribute("enterprise",enterPrise);
        session.setAttribute("enterprise",enterPrise);
        // session.setAttribute("enterPrise",envAchi);

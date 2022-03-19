@@ -1,1 +1,47 @@
 <html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <button class="nav-link active" id="download-tab" data-bs-toggle="tab"
+                data-bs-target="#download"
+                type="button" role="tab">详细数据
+        </button>
+        <button class="nav-link" id="intro-tab" data-bs-toggle="tab" data-bs-target="#intro"
+                type="button" role="tab">数据简介
+        </button>
+    </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="download" role="tabpanel">
+        <div class="table-responsive">
+            <table class="table table-striped caption-top text-center">
+                <caption>社会责任_生产安全</caption>
+                <thead>
+                <tr>
+                    <th scope="col">统计截止日期</th>
+                    <th scope="col">公告日期</th>
+                    <th scope="col">项目名称</th>
+                    <th scope="col">项目数值</th>
+                    <th scope="col">单位</th>
+
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="temp : ${session.socRes1}">
+                    <!--                    <td scope="row" th:text="${enterPrise.getPerfProjectName()}"></td>-->
+                    <!--                    <td th:text="${enterPrise.getPerfValue()}"></td>-->
+                    <td scope="row" th:text="${temp.getEndDate()}"></td>
+
+                    <td th:text="${temp.getDeclareDate()}"></td>
+                    <td th:text="${temp.getItemName()}"></td>
+                    <td th:text="${temp.getAmount()}"></td>
+                    <td th:text="${temp.getUnit()}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="intro" role="tabpanel">
+        intro
+    </div>
+</div>

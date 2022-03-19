@@ -9,11 +9,28 @@ import javax.persistence.Table;
 @Table(name = "source_风险水平")
 public class Risk_Level {
     @Id
+    private int id;
     //属性
     private String stkcd;   //证券代码
     private String Accper;  //截止日期
     private String Typrep;  //报表类型编码
     private String Indcd;   //行业代码
+
+    @Override
+    public String toString() {
+        return "Risk_Level{" +
+                "id=" + id +
+                ", stkcd='" + stkcd + '\'' +
+                ", Accper='" + Accper + '\'' +
+                ", Typrep='" + Typrep + '\'' +
+                ", Indcd='" + Indcd + '\'' +
+                ", F070101B='" + F070101B + '\'' +
+                ", F070201B='" + F070201B + '\'' +
+                ", F070301B='" + F070301B + '\'' +
+                ", Indnme='" + Indnme + '\'' +
+                '}';
+    }
+
     private String F070101B;    //财务杠杆
     private String F070201B;    //经营杠杆
     private String F070301B;    //综合杠杆

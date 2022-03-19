@@ -9,8 +9,48 @@ import javax.persistence.Table;
 @Table(name = "source_财务指标")
 public class Financial_Index {
     @Id
+    private int id;
     //属性
     private String stkcd;   //证券代码
+
+    @Override
+    public String toString() {
+        return "Financial_Index{" +
+                "id=" + id +
+                ", stkcd='" + stkcd + '\'' +
+                ", ShortName='" + ShortName + '\'' +
+                ", IndustryCode='" + IndustryCode + '\'' +
+                ", IndustryName='" + IndustryName + '\'' +
+                ", EndDate='" + EndDate + '\'' +
+                ", StateType='" + StateType + '\'' +
+                ", TotalAssets='" + TotalAssets + '\'' +
+                ", TotalLiabilities='" + TotalLiabilities + '\'' +
+                ", OperatingRevenue='" + OperatingRevenue + '\'' +
+                ", OperatingNetCashFlow='" + OperatingNetCashFlow + '\'' +
+                ", ROA='" + ROA + '\'' +
+                ", AssetLiabilityRatio='" + AssetLiabilityRatio + '\'' +
+                ", FinancialLiability='" + FinancialLiability + '\'' +
+                ", OperatingLiability='" + OperatingLiability + '\'' +
+                ", BookToMarketRatio='" + BookToMarketRatio + '\'' +
+                ", ManagementExpenseRate='" + ManagementExpenseRate + '\'' +
+                ", TangibleAssetRatio='" + TangibleAssetRatio + '\'' +
+                ", CurrentRatio='" + CurrentRatio + '\'' +
+                ", InventoryTurnover='" + InventoryTurnover + '\'' +
+                ", WorkingCapitalTurnover='" + WorkingCapitalTurnover + '\'' +
+                ", CashEquivalentsTurnover='" + CashEquivalentsTurnover + '\'' +
+                ", OperatingRevenueGrowth='" + OperatingRevenueGrowth + '\'' +
+                ", NonDebtTaxShield='" + NonDebtTaxShield + '\'' +
+                ", IncomeTaxTate='" + IncomeTaxTate + '\'' +
+                ", ProfitsVolatility='" + ProfitsVolatility + '\'' +
+                ", CashFlowVolatility='" + CashFlowVolatility + '\'' +
+                ", InterestCoverageRatio='" + InterestCoverageRatio + '\'' +
+                ", TaxBearing='" + TaxBearing + '\'' +
+                ", BankLoanRatio='" + BankLoanRatio + '\'' +
+                ", ShortLoanDependence='" + ShortLoanDependence + '\'' +
+                ", ShareholdersOccupy='" + ShareholdersOccupy + '\'' +
+                '}';
+    }
+
     private String ShortName;   //证券简称
     private String IndustryCode;    //行业代码
     private String IndustryName;    //行业名称

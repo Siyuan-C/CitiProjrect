@@ -9,6 +9,21 @@ import javax.persistence.Table;
 @Table(name = "source_环境投资_上市公司环境投资明细表")
 public class EnvironmentInvestment_Details {
     @Id
+    private int id;
+
+    @Override
+    public String toString() {
+        return "EnvironmentInvestment_Details{" +
+                "id=" + id +
+                ", stkcd='" + stkcd + '\'' +
+                ", EndDate='" + EndDate + '\'' +
+                ", InstitutionID='" + InstitutionID + '\'' +
+                ", ShortName='" + ShortName + '\'' +
+                ", ProjectName='" + ProjectName + '\'' +
+                ", InputFee='" + InputFee + '\'' +
+                '}';
+    }
+
     //属性
     private String stkcd;   //证券代码
     private String EndDate; //统计截止日期

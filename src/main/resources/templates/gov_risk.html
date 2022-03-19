@@ -1,0 +1,47 @@
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <button class="nav-link active" id="download-tab" data-bs-toggle="tab"
+                data-bs-target="#download"
+                type="button" role="tab">详细数据
+        </button>
+        <button class="nav-link" id="intro-tab" data-bs-toggle="tab" data-bs-target="#intro"
+                type="button" role="tab">数据简介
+        </button>
+    </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="download" role="tabpanel">
+        <div class="table-responsive">
+            <table class="table table-striped caption-top text-center">
+                <caption>公司治理_风险水平</caption>
+                <thead>
+                <tr>
+                    <th scope="col">截止日期</th>
+                    <th scope="col">报表类型</th>
+                    <th scope="col">财务杠杆</th>
+                    <th scope="col">经营杠杆</th>
+                    <th scope="col">综合杠杆</th>
+                    <th scope="col">行业名称</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="temp : ${session.risLev}">
+                    <!--                    <td scope="row" th:text="${enterPrise.getPerfProjectName()}"></td>-->
+                    <!--                    <td th:text="${enterPrise.getPerfValue()}"></td>-->
+                    <td scope="row" th:text="${temp.getAccper()}"></td>
+                    <td th:text="${temp.getTyprep()}"></td>
+                    <td th:text="${temp.getF070101B()}"></td>
+                    <td th:text="${temp.getF070201B()}"></td>
+                    <td th:text="${temp.getF070301B()}"></td>
+                    <td th:text="${temp.getIndnme()}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="intro" role="tabpanel">
+        intro
+    </div>
+</div>

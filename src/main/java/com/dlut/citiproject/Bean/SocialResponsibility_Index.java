@@ -9,6 +9,7 @@ import javax.persistence.Table;
 @Table(name = "source_上市公司社会责任评价指标表")
 public class SocialResponsibility_Index {
     @Id
+    private int id;
     //属性
     private String stkcd;   //证券代码
     private String ShortName;   //股票简称
@@ -20,6 +21,27 @@ public class SocialResponsibility_Index {
     private String ContentType;     //披露内容类型
     private String ItemRank;    //项目序号
     private String ItemName;    //项目名称
+
+    @Override
+    public String toString() {
+        return "SocialResponsibility_Index{" +
+                "id=" + id +
+                ", stkcd='" + stkcd + '\'' +
+                ", ShortName='" + ShortName + '\'' +
+                ", EndDate='" + EndDate + '\'' +
+                ", DeclareDate='" + DeclareDate + '\'' +
+                ", StatisticCaliberID='" + StatisticCaliberID + '\'' +
+                ", StatisticCaliber='" + StatisticCaliber + '\'' +
+                ", ContentTypeCode='" + ContentTypeCode + '\'' +
+                ", ContentType='" + ContentType + '\'' +
+                ", ItemRank='" + ItemRank + '\'' +
+                ", ItemName='" + ItemName + '\'' +
+                ", Amount='" + Amount + '\'' +
+                ", Unit='" + Unit + '\'' +
+                ", Notes='" + Notes + '\'' +
+                '}';
+    }
+
     private String Amount;  //项目数值
     private String Unit;    //单位
     private String Notes;   //备注

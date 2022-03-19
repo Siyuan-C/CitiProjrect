@@ -8,6 +8,6 @@ import org.springframework.data.repository.query.Param;
 import java.util.ArrayList;
 
 public interface EnvironmentInvestment_DetailsRepository extends JpaRepository<EnvironmentInvestment_Details,Long> {
-    @Query(value = "SELECT * FROM source_环境投资_上市公司环境投资明细表 WHERE SHORTNAME = :name", nativeQuery = true)
-    ArrayList<EnvironmentInvestment_Details> findEnvironmentInvestment_DetailsByName(String name);
+    @Query(value = "SELECT * FROM source_环境投资_上市公司环境投资明细表 WHERE short_name = :name", nativeQuery = true)
+    ArrayList<EnvironmentInvestment_Details> findEnvironmentInvestment_DetailsByName(@Param("name")String name);
 }
