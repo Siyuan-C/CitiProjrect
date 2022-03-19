@@ -1,10 +1,11 @@
 package com.dlut.citiproject.Bean;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
-@Table(name = "storage_corporation")
-public class Storage_corporation {
+//@Table(name = "storage_corporation")
+public class Login_UserBean {
     @Id
 //    @GeneratedValue(strategy= GenerationType.AUTO)
 //    //属性
@@ -12,12 +13,12 @@ public class Storage_corporation {
     private String name;
     private String password;
 
-    public Storage_corporation(int id ,String name,String password){
+    public Login_UserBean(int id , String name, String password){
         this.id=id;
         this.name=name;
         this.password=password;
     }
-    public Storage_corporation(){
+    public Login_UserBean(){
 
     }
 

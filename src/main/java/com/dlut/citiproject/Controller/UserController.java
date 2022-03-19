@@ -1,17 +1,16 @@
 package com.dlut.citiproject.Controller;
 
-import com.dlut.citiproject.Bean.*;
-
-import com.dlut.citiproject.Repository.*;
+import com.dlut.citiproject.Bean.Login_UserBean;
+import com.dlut.citiproject.Bean.UserBean;
+import com.dlut.citiproject.Repository.Login_UserBeanRepository;
+import com.dlut.citiproject.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
 
 @Controller
 public class UserController {
@@ -19,7 +18,7 @@ public class UserController {
     @Autowired
     UserRepository userRepository;
     @Autowired
-    Storage_corporationRepository storage_corporationRepository;
+    Login_UserBeanRepository loginUserBeanRepository;
 
 
 
@@ -48,8 +47,8 @@ public class UserController {
             model.addAttribute("message2", message2);
             return "login";
         }
-        if(storage_corporationRepository.existsByName(username)){
-            Storage_corporation s = storage_corporationRepository.getStorage_corporationByName(username);
+        if(loginUserBeanRepository.existsByName(username)){
+            Login_UserBean s = loginUserBeanRepository.getLogin_UserBeanByName(username);
             if(password.equals(s.getPassword())){
                 session.setAttribute("loginUser",username);
 

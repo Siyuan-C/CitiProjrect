@@ -1,25 +1,16 @@
 package com.dlut.citiproject.Controller;
 
-import com.dlut.citiproject.Repository.*;
-import com.dlut.citiproject.Repository.LevelRepository;
 import com.dlut.citiproject.Bean.*;
-import org.hibernate.query.criteria.internal.expression.function.AggregationFunction;
+import com.dlut.citiproject.Repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.web.servlet.server.Session;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 @Controller
 public class BaseController {
@@ -41,6 +32,13 @@ public class BaseController {
     @Autowired
     SocialResponsibility_IndexRepository SocResRepo;
 
+
+    @Autowired
+    User_UploadRepository UsrUpRepo;
+    @Autowired
+    UserRepository userRepository;
+    @Autowired
+    Login_UserBeanRepository loginUserBeanRepository;
 
     @RequestMapping("/")
     public String index(){
@@ -105,14 +103,23 @@ public class BaseController {
 //    public String businessHall(){
 //        return "业务大厅";
 //    }
-    //显示个人信息，repository未设置 李季桥
-//    @RequestMapping("/my_account")
-//    public String my_account(HttpSession session,Model model){
-//        String name = (String) session.getAttribute("loginUser");
-//        ArrayList<WH_application> wh_saleArrayList = wh_applicationRepository.findWH_applicationsByName4(name);
-//        model.addAttribute("saleList",wh_saleArrayList);
-//        return "my_account";
-//    }
+
+
+    //显示用户信息 _Lijiqiao
+    //需要在"用户上传信息的库中"找到属于当前用户的信息并显示。
+    @RequestMapping("/my_account")
+    public String my_account(@RequestParam("upload_name") String upload_name,Model model,HttpSession session) {
+        upload_name = (String) session.getAttribute("loginUser");
+        if (!loginUserBeanRepository.existsByName(upload_name)) {
+           return login();//如果用户不存在则去登录、注册
+        }
+        else{   //检测到表中存在该上传的用户
+            ArrayList<User_Upload> usr_up_ret = UsrUpRepo.findUser_UploadBy_Name(upload_name);
+            model.addAttribute("upload_name", usr_up_ret);
+            return "my_account";
+                }
+            }
+
 
     //企业上传信息
     @RequestMapping("/upload")
@@ -161,6 +168,5 @@ public class BaseController {
         return "enterprise";
 
     }
-
 
 }

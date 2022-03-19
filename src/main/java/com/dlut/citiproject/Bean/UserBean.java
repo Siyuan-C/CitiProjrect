@@ -1,8 +1,8 @@
 package com.dlut.citiproject.Bean;
 
-import org.apache.catalina.User;
-
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "user")
@@ -14,7 +14,9 @@ public class UserBean {
     private String name;
     private String password;
     private String email;
-
+//    private String introduction;//自我介绍
+//    private String work_place;//工作单位
+//    private String job;
     //有参构造
     public UserBean(String name,String password,String email){
         this.name=name;
