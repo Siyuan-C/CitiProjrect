@@ -3,13 +3,17 @@ package com.dlut.citiproject.Controller;
 import com.dlut.citiproject.Repository.*;
 import com.dlut.citiproject.Repository.LevelRepository;
 import com.dlut.citiproject.Bean.*;
+import org.hibernate.query.criteria.internal.expression.function.AggregationFunction;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.server.Session;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 import java.io.File;
@@ -22,18 +26,11 @@ public class BaseController {
     //注入用户jpa操作接口
     @Autowired
     LevelRepository levelRepository;
-
-
-
-
-
-
-
     @RequestMapping("/")
     public String index(){
         return "index";
     }
-    @RequestMapping("/s")
+    @RequestMapping("/search")
     public String s(){
         return "search";
     }
@@ -53,12 +50,12 @@ public class BaseController {
     }
     @RequestMapping("/enterprise")
     public String enterprise(){return "enterprise";}
-    @RequestMapping("/search")
+    @RequestMapping("/search_data")
     public String search(@RequestParam String enterprise_name, Model model){
         String message = null;
-        ArrayList<String> enterPriseNames = levelRepository.findLevelByName(enterprise_name);
-        if(!enterPriseNames.isEmpty()){
-            model.addAttribute("enterPriseNames",enterPriseNames);
+        ArrayList<String> enterPrises = levelRepository.findLevelByName(enterprise_name);
+        if(!enterPrises.isEmpty()){
+            model.addAttribute("enterPrises",enterPrises);
             return "result";
         }else{
             message = "查询无相关企业！";
@@ -85,6 +82,16 @@ public class BaseController {
         model.addAttribute("name",Name);
         System.out.println(Name);
         return "upload";
+    }
+
+    @GetMapping("/enterprise")
+    public String display(@RequestParam("enterprise_name") String enterprise_name, Model model){
+
+        LevelBean enterPrise = levelRepository.findLevelByName1(enterprise_name);
+        model.addAttribute("enterprise_name",enterprise_name);
+        model.addAttribute("enterprise",enterPrise);
+        return "enterprise";
+
     }
 
 

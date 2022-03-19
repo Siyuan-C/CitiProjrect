@@ -9,4 +9,6 @@ import java.util.ArrayList;
 public interface LevelRepository extends JpaRepository<LevelBean,Long>{
     @Query(value = "SELECT ShortName FROM level WHERE ShortName like %:name%",nativeQuery = true)
     ArrayList<String> findLevelByName(@Param("name")String name);
+    @Query(value = "SELECT * FROM level WHERE ShortName like %:name%",nativeQuery = true)
+    LevelBean findLevelByName1(@Param("name")String name);
 }

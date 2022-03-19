@@ -9,6 +9,10 @@ public class LevelBean {
     //@GeneratedValue(strategy= GenerationType.AUTO)
     //属性
     private  String stkcd;
+
+    public LevelBean() {
+    }
+
     private  String ShortName;
     private  String E_level;
     private  String S_level;

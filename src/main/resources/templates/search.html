@@ -85,8 +85,8 @@
 </div>
 
 <div class="box-container">  <!--整个搜索框的容器，用于使搜索框居中-->
-    <form action="/search" class="box">  <!--整个搜索框-->
-        <input type="text" placeholder="请输入你想查询的内容" name="query" id="query-text" value=""
+    <form action="/search_data" class="box">  <!--整个搜索框-->
+        <input type="text" placeholder="请输入你想查询的内容" name="enterprise_name" id="query-text" value=""
                style="width: 400px;height: 38px;border-radius: 10px;"/>
         <!--输入框-->
         <button type="submit" id="search-button">
@@ -101,75 +101,75 @@
 <div class="diagram container">
     <div class="row row-cols-2 row-cols-md-4 g-2">
         <div class="col">
-            <div class="random" data-entid="666">
-                <img src="img/search/u5.svg" alt="XX企业">
-                <span>XX企业</span>
+            <div class="random" data-enterprise_name="万科A">
+                <img src="img/search/u5.svg" alt="万科A">
+                <span>万科A</span>
             </div>
         </div>
         <div class="col">
-            <div class="random" data-entid="666">
+            <div class="random" data-enterprise_name="保利地产">
                 <img src="img/search/u5.svg" alt="XX企业">
-                <span>XX企业</span>
+                <span>保利地产</span>
             </div>
         </div>
         <div class="col">
-            <div class="random" data-entid="666">
+            <div class="random" data-enterprise_name="格力地产">
                 <img src="img/search/u5.svg" alt="XX企业">
-                <span>XX企业</span>
+                <span>格力地产</span>
             </div>
         </div>
         <div class="col">
-            <div class="random" data-entid="666">
+            <div class="random" data-enterprise_name="华夏幸福">
                 <img src="img/search/u5.svg" alt="XX企业">
-                <span>XX企业</span>
+                <span>华夏幸福</span>
             </div>
         </div>
         <div class="col">
-            <div class="random" data-entid="666">
+            <div class="random" data-enterprise_name="金地集团">
                 <img src="img/search/u5.svg" alt="XX企业">
-                <span>XX企业</span>
+                <span>金地集团</span>
             </div>
         </div>
         <div class="col">
-            <div class="random" data-entid="666">
+            <div class="random" data-enterprise_name="中兴通讯">
                 <img src="img/search/u5.svg" alt="XX企业">
-                <span>XX企业</span>
+                <span>中兴通讯</span>
             </div>
         </div>
         <div class="col">
-            <div class="random" data-entid="666">
+            <div class="random" data-enterprise_name="京东方A">
                 <img src="img/search/u5.svg" alt="XX企业">
-                <span>XX企业</span>
+                <span>京东方A</span>
             </div>
         </div>
         <div class="col">
-            <div class="random" data-entid="666">
+            <div class="random" data-enterprise_name="华工科技">
                 <img src="img/search/u5.svg" alt="XX企业">
-                <span>XX企业</span>
+                <span>华工科技</span>
             </div>
         </div>
         <div class="col">
-            <div class="random" data-entid="666">
+            <div class="random" data-enterprise_name="漫步者">
                 <img src="img/search/u5.svg" alt="XX企业">
-                <span>XX企业</span>
+                <span>漫步者</span>
             </div>
         </div>
         <div class="col">
-            <div class="random" data-entid="666">
+            <div class="random" data-enterprise_name="海康威视">
                 <img src="img/search/u5.svg" alt="XX企业">
-                <span>XX企业</span>
+                <span>海康威视</span>
             </div>
         </div>
         <div class="col">
-            <div class="random" data-entid="666">
+            <div class="random" data-enterprise_name="南玻A">
                 <img src="img/search/u5.svg" alt="XX企业">
-                <span>XX企业</span>
+                <span>南玻A</span>
             </div>
         </div>
         <div class="col">
-            <div class="random" data-entid="666">
+            <div class="random" data-enterprise_name="美锦能源">
                 <img src="img/search/u5.svg" alt="XX企业">
-                <span>XX企业</span>
+                <span>美锦能源</span>
             </div>
         </div>
     </div>
@@ -180,7 +180,7 @@
         let random = document.getElementsByClassName('random');
         for (let i of random) {
             i.addEventListener('click', () => {
-                window.location.href = 'enterprise.html?entId=' + i.dataset.entid;
+                window.location.href = 'enterprise?enterprise_name=' + i.dataset.enterprise_name;
             });
         }
     }
