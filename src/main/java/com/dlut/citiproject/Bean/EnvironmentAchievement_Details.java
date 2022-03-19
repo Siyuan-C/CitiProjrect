@@ -8,8 +8,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "source_环境绩效_上市公司环境绩效明细表")
 public class EnvironmentAchievement_Details {
-    @Id
+
     //属性
+    @Id
+    private int id;
     private String stkcd;   //证券代码
     private String EndDate; //统计截止日期
     private String InstitutionID;   //上市公司ID
@@ -21,12 +23,25 @@ public class EnvironmentAchievement_Details {
     //有参构造
     public EnvironmentAchievement_Details(String stkcd, String endDate, String institutionID, String shortName, String perfProjectName, String perfValue, String unit) {
         this.stkcd = stkcd;
-        EndDate = endDate;
-        InstitutionID = institutionID;
-        ShortName = shortName;
-        PerfProjectName = perfProjectName;
-        PerfValue = perfValue;
-        Unit = unit;
+        this.EndDate = endDate;
+        this.InstitutionID = institutionID;
+        this.ShortName = shortName;
+        this.PerfProjectName = perfProjectName;
+        this.PerfValue = perfValue;
+        this.Unit = unit;
+    }
+
+    @Override
+    public String toString() {
+        return "EnvironmentAchievement_Details{" +
+                "stkcd='" + stkcd + '\'' +
+                ", EndDate='" + EndDate + '\'' +
+                ", InstitutionID='" + InstitutionID + '\'' +
+                ", ShortName='" + ShortName + '\'' +
+                ", PerfProjectName='" + PerfProjectName + '\'' +
+                ", PerfValue='" + PerfValue + '\'' +
+                ", Unit='" + Unit + '\'' +
+                '}';
     }
 
     //无参构造
@@ -67,6 +82,7 @@ public class EnvironmentAchievement_Details {
     }
 
     public String getPerfProjectName() {
+//        System.out.println(PerfProjectName);
         return PerfProjectName;
     }
 

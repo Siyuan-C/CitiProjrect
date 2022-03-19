@@ -26,6 +26,11 @@ public class BaseController {
     //注入用户jpa操作接口
     @Autowired
     LevelRepository levelRepository;
+    @Autowired
+    EnvironmentAchievement_DetailsRepository EnvAchiRepo;
+
+
+
     @RequestMapping("/")
     public String index(){
         return "index";
@@ -50,7 +55,7 @@ public class BaseController {
     }
     @RequestMapping("/enterprise")
     public String enterprise(){return "enterprise";}
-        @RequestMapping("/overall")
+    @RequestMapping("/overall")
     public String overall(){return "overall";}
     @RequestMapping("/soc_safety")
     public String soc_safety(){return "soc_safety";}
@@ -64,7 +69,7 @@ public class BaseController {
     public String gov_admin(){return "gov_admin";}
     @RequestMapping("/gov_manage")
     public String gov_manage(){return "gov_manage";}
-    @RequestMapping("env_performance")
+    @RequestMapping("/env_performance")
     public String env_performance(){return "env_performance";}
     @RequestMapping("/env_disclosure")
     public String env_disclosure(){return "env_disclosure";}
@@ -109,13 +114,21 @@ public class BaseController {
     @GetMapping("/enterprise")
     public String display(@RequestParam("enterprise_name") String enterprise_name, Model model,HttpSession session){
 
-        System.out.println(enterprise_name);
+        //System.out.println(enterprise_name);
         LevelBean enterPrise = levelRepository.findLevelByName1(enterprise_name);
-        System.out.println(enterPrise.getE_level());
+        //EnvironmentAchievement_Details envAchi = new EnvironmentAchievement_Details();
+        ArrayList<EnvironmentAchievement_Details> envAchiDetail = EnvAchiRepo.findEnvironmentAchievement_DetailsByName(enterprise_name);
+        for(int i=0;i<envAchiDetail.size();i++){
 
+            System.out.println(envAchiDetail.get(i).toString()+" "+i);
+        }
+        //System.out.println(enterPrise.getE_level());
+        model.addAttribute("enterprise",enterPrise);
         model.addAttribute("enterprise_name",enterprise_name);
+        session.setAttribute("envAchiDetail",envAchiDetail);
 //        model.addAttribute("enterprise",enterPrise);
-        session.setAttribute("enterprise_Elevel",enterPrise.getE_level());
+       session.setAttribute("enterprise",enterPrise);
+       // session.setAttribute("enterPrise",envAchi);
 
         return "enterprise";
 

@@ -1,3 +1,4 @@
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
 <nav>
     <div class="nav nav-tabs" id="nav-tab" role="tablist">
         <button class="nav-link active" id="download-tab" data-bs-toggle="tab"
@@ -21,9 +22,11 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="wh:${}">
-                    <td scope="row" th:text="${wh.stkname}"></td>
-                    <td th:text="${wh.Consumption}"></td>
+                <tr th:each="temp : ${session.envAchiDetail}">
+<!--                    <td scope="row" th:text="${enterPrise.getPerfProjectName()}"></td>-->
+<!--                    <td th:text="${enterPrise.getPerfValue()}"></td>-->
+                    <td scope="row" th:text="${temp.getPerfProjectName()}"></td>
+                    <td th:text="${temp.getPerfValue()}"></td>
                 </tr>
                 </tbody>
             </table>
