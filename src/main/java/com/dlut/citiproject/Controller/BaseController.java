@@ -50,6 +50,28 @@ public class BaseController {
     }
     @RequestMapping("/enterprise")
     public String enterprise(){return "enterprise";}
+        @RequestMapping("/overall")
+    public String overall(){return "overall";}
+    @RequestMapping("/soc_safety")
+    public String soc_safety(){return "soc_safety";}
+    @RequestMapping("/soc_customer")
+    public String soc_customer(){return "soc_customer";}
+    @RequestMapping("/soc_public")
+    public String soc_public(){return "soc_public";}
+    @RequestMapping("/gov_ris")
+    public String gov_ris(){return "gov_ris";}
+    @RequestMapping("/gov_admin")
+    public String gov_admin(){return "gov_admin";}
+    @RequestMapping("/gov_manage")
+    public String gov_manage(){return "gov_manage";}
+    @RequestMapping("env_performance")
+    public String env_performance(){return "env_performance";}
+    @RequestMapping("/env_disclosure")
+    public String env_disclosure(){return "env_disclosure";}
+    @RequestMapping("/env_investment")
+    public String env_investment(){return "env_investment";}
+
+
     @RequestMapping("/search_data")
     public String search(@RequestParam String enterprise_name, Model model){
         String message = null;
@@ -85,11 +107,16 @@ public class BaseController {
     }
 
     @GetMapping("/enterprise")
-    public String display(@RequestParam("enterprise_name") String enterprise_name, Model model){
+    public String display(@RequestParam("enterprise_name") String enterprise_name, Model model,HttpSession session){
 
+        System.out.println(enterprise_name);
         LevelBean enterPrise = levelRepository.findLevelByName1(enterprise_name);
+        System.out.println(enterPrise.getE_level());
+
         model.addAttribute("enterprise_name",enterprise_name);
-        model.addAttribute("enterprise",enterPrise);
+//        model.addAttribute("enterprise",enterPrise);
+        session.setAttribute("enterprise_Elevel",enterPrise.getE_level());
+
         return "enterprise";
 
     }

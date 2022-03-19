@@ -16,7 +16,7 @@
 <main>
     <span id="back" onclick="window.history.back()">&lt;&lt;返回搜索界面</span>
     <h1 th:text="${enterprise_name}"></h1>
-    <h4 th:text="${enterprise.getE_level()}"></h4>
+    <h4 th:text="${session.enterprise_Elevel}"></h4>
     <section>
         <div class="row">
             <nav id="sidebar" class="col-auto">
@@ -27,7 +27,7 @@
                 </div>
                 <div id="item-list" class="collapse">
                     <div class="side-item">
-                        <div onclick="routeTo('overall.html')">整体ESG评估结果</div>
+                        <div onclick="routeTo('overall')">整体ESG评估结果</div>
                     </div>
                     <div class="side-item">
                         <div>环境研究</div>
@@ -35,9 +35,9 @@
                               aria-controls="environment">▼</span>
                     </div>
                     <div class="side-dropdown collapse" id="environment">
-                        <div th:onclick="routeTo('./env_performance.html')">环境绩效</div>
-                        <div th:onclick="routeTo('./env_disclosure.html')">环境披露</div>
-                        <div onclick="routeTo('env_investment.html')">环境投资</div>
+                        <div onclick="routeTo('env_performance')">环境绩效</div>
+                        <div onclick="routeTo('env_disclosure')">环境披露</div>
+                        <div onclick="routeTo('env_investment')">环境投资</div>
                     </div>
                     <div class="side-item">
                         <div>社会责任</div>
@@ -45,9 +45,9 @@
                               aria-controls="society">▼</span>
                     </div>
                     <div class="side-dropdown collapse" id="society">
-                        <div onclick="routeTo('soc_safety.html')">生产安全</div>
-                        <div onclick="routeTo('soc_customer.html')">客户及消费者权益保护</div>
-                        <div onclick="routeTo('soc_public.html')">公共关系和社会公益事业</div>
+                        <div onclick="routeTo('soc_safety')">生产安全</div>
+                        <div onclick="routeTo('soc_customer')">客户及消费者权益保护</div>
+                        <div onclick="routeTo('soc_public')">公共关系和社会公益事业</div>
                     </div>
                     <div class="side-item">
                         <div>公司治理</div>
@@ -55,9 +55,9 @@
                               aria-controls="governance">▼</span>
                     </div>
                     <div class="side-dropdown collapse" id="governance">
-                        <div onclick="routeTo('gov_risk.html')">风险水平</div>
-                        <div onclick="routeTo('gov_admin.html')">管理层治理</div>
-                        <div onclick="routeTo('gov_manage.html')">经营水平</div>
+                        <div onclick="routeTo('gov_ris')">风险水平</div>
+                        <div onclick="routeTo('gov_admin')">管理层治理</div>
+                        <div onclick="routeTo('gov_manage')">经营水平</div>
                     </div>
                 </div>
             </nav>
@@ -76,7 +76,7 @@
                 toggle: true
             });
         }
-        $('#router').load('overall.html');
+        $('#router').load('overall');
     });
     function routeTo(path) {
         $('#router').load(path);

@@ -17,7 +17,7 @@ public class SessionFilter implements Filter {
 
     //不需要登录就可以访问的路径(比如:注册登录等)
     String[] includeUrls = new String[]{"/login","/","/register","/login_data","/search","/result","/search_data","/enterprise","/env_performance.html","/navbar.html","/footer.html"
-            ,"/overall.html",};
+            ,"/overall","/env_performance","/env_disclosure","/env_investment","/soc_safety","/soc_customer","/soc_public","/gov_ris","/gov_admin","/gov_manage"};
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
