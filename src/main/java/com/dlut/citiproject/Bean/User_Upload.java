@@ -8,9 +8,48 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "企业上传信息表")
 public class User_Upload {
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     @Id
     //属性
     private String name;    //用户名
+
+    @Override
+    public String toString() {
+        return "User_Upload{" +
+                "name='" + name + '\'' +
+                ", Corporation_Name='" + Corporation_Name + '\'' +
+                ", EnvironmentalActions_Number='" + EnvironmentalActions_Number + '\'' +
+                ", EnvironmentalInput_Costs='" + EnvironmentalInput_Costs + '\'' +
+                ", Environmental_Investment='" + Environmental_Investment + '\'' +
+                ", EmissionReductions_Number='" + EmissionReductions_Number + '\'' +
+                ", Environmental_Reports='" + Environmental_Reports + '\'' +
+                ", Certification_ISO9001='" + Certification_ISO9001 + '\'' +
+                ", Work_Accidents='" + Work_Accidents + '\'' +
+                ", MajorSafety_Accidents='" + MajorSafety_Accidents + '\'' +
+                ", Customer_Satisfaction='" + Customer_Satisfaction + '\'' +
+                ", EmployedPeople_Placement='" + EmployedPeople_Placement + '\'' +
+                ", Employee_Satisfaction='" + Employee_Satisfaction + '\'' +
+                ", Complaint_Incidents='" + Complaint_Incidents + '\'' +
+                ", NetProfit_Margin='" + NetProfit_Margin + '\'' +
+                ", Debt_Ratio='" + Debt_Ratio + '\'' +
+                ", IncomeGrowth_Ratio='" + IncomeGrowth_Ratio + '\'' +
+                ", Financial_Leverage='" + Financial_Leverage + '\'' +
+                ", Operating_Leverage='" + Operating_Leverage + '\'' +
+                ", Consolidated_Leverage='" + Consolidated_Leverage + '\'' +
+                ", StockholderShareholding_Ratio='" + StockholderShareholding_Ratio + '\'' +
+                ", InvestorShareholding_Ratio='" + InvestorShareholding_Ratio + '\'' +
+                ", ManagerShareholding_Ratio='" + ManagerShareholding_Ratio + '\'' +
+                '}';
+    }
+
+    private  int id;
     private String Corporation_Name;    //企业名称
     private String EnvironmentalActions_Number;    //环保专项行动次数
     private String EnvironmentalInput_Costs;    //环保项目投入费用

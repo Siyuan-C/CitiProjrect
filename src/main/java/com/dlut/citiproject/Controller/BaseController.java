@@ -117,14 +117,18 @@ public class BaseController {
     //显示用户信息 _Lijiqiao
     //需要在"用户上传信息的库中"找到属于当前用户的信息并显示。
     @RequestMapping("/my_account")
-    public String my_account(@RequestParam("upload_name") String upload_name,Model model,HttpSession session) {
-        upload_name = (String) session.getAttribute("loginUser");
-        if (!userRepository.existsByName(upload_name)) {
-           return "login";//如果用户不存在则去登录、注册
+    public String my_account(Model model,HttpSession session) {
+       String name = (String) session.getAttribute("loginUser");
+       System.out.println(name);
+       User_Upload upload = UsrUpRepo.findUser_Upload_inuserByName(name);
+        System.out.println(upload.toString());
+        if (!userRepository.existsByName(upload.getName())) {
+           return "ent_upload";//如果用户不存在则去登录、注册
         }
         else{   //检测到表中存在该上传的用户
-            ArrayList<User_Upload> usr_up_ret = UsrUpRepo.findUser_UploadBy_Name(upload_name);
-            model.addAttribute("upload_name", usr_up_ret);
+//            ArrayList<User_Upload> usr_up_ret = UsrUpRepo.findUser_UploadBy_Name(upload_name);
+            System.out.println(upload.toString());
+            model.addAttribute("upload_name", upload);
             return "my_account";
                 }
             }
