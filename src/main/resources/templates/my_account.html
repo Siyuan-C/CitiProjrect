@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,16 +14,16 @@
         <section class="g-4">
             <div class="container">
                 <div>
-                    <h1>企业名称</h1>
+                    <h1 th:text="${upload_name.getCorporation_Name()}">企业名称</h1>
                     <div class="d-flex">
-                        <img src="./image/company_logo.jpg" alt="showcase"
-                        class="w-25 d-none d-sm-block" title="企业图标">
-                        <div class="p-5">
-                            <h4>企业名称</h4>
-                            <p>
-                                ID:88888888
-                            </p>
-                        </div>
+<!--                        <img src="img/jdf.jpg"  alt="showcase"-->
+<!--                        class="w-25 d-none d-sm-block" title="企业图标">-->
+<!--                        <div class="p-5">-->
+<!--&lt;!&ndash;                            <h4 th:text="${upload_name.getCorporation_Name()}">企业名称</h4>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <p>&ndash;&gt;-->
+<!--&lt;!&ndash;                                ID:88888888&ndash;&gt;-->
+<!--&lt;!&ndash;                            </p>&ndash;&gt;-->
+<!--                        </div>-->
                     </div>
                 </div>
             </div>
@@ -39,7 +39,7 @@
                                     环保专项行动次数
                                 </h4>
                                 <p class="card-text">
-                                    <small>未添加内容</small>
+                                    <small th:text="${upload_name.getEnvironmentalActions_Number()}"></small>
                                 </p>
                             </div>
                         </div>
@@ -51,7 +51,7 @@
                                     环保项目投入费用
                                 </h4>
                                 <p class="card-text">
-                                    <small>未添加内容</small>
+                                    <small th:text="${upload_name.getEnvironmentalInput_Costs()}+'万元'">未添加内容</small>
                                 </p>
                             </div>
                         </div>
@@ -63,7 +63,7 @@
                                     环保投资
                                 </h4>
                                 <p class="card-text">
-                                    <small>未添加内容</small>
+                                    <small th:text="${upload_name.getEnvironmental_Investment()+'万元'}">未添加内容</small>
                                 </p>
                             </div>
                         </div>
@@ -75,7 +75,7 @@
                                     废水、废气等减排治理次数
                                 </h4>
                                 <p class="card-text">
-                                    <small>未添加内容</small>
+                                    <small th:text="${upload_name.getEmissionReductions_Number()}">未添加内容</small>
                                 </p>
                             </div>
                         </div>
@@ -87,7 +87,7 @@
                                     环境报告/社会责任报告
                                 </h4>
                                 <p class="card-text">
-                                    <small>未添加内容</small>
+                                    <small th:text="${upload_name.getEnvironmental_Reports()+'份'}">未添加内容</small>
                                 </p>
                             </div>
                         </div>
@@ -99,7 +99,7 @@
                                     是否通过ISO9001认证
                                 </h4>
                                 <p class="card-text">
-                                    <small>未选择内容</small>
+                                    <small >通过</small>
                                 </p>
                             </div>
                         </div>
@@ -111,7 +111,7 @@
                                     工伤事故
                                 </h4>
                                 <p class="card-text">
-                                    <small>未添加内容</small>
+                                    <small th:text="${upload_name.getWork_Accidents()+'次'}">未添加内容</small>
                                 </p>
                             </div>
                         </div>
@@ -123,7 +123,7 @@
                                     重大安全事故
                                 </h4>
                                 <p class="card-text">
-                                    <small>未添加内容</small>
+                                    <small th:text="${upload_name.getMajorSafety_Accidents()+'次'}">未添加内容</small>
                                 </p>
                             </div>
                         </div>
@@ -135,7 +135,7 @@
                                     客户满意度
                                 </h4>
                                 <p class="card-text">
-                                    <small>未添加内容</small>
+                                    <small  th:text="${upload_name.getCustomer_Satisfaction()+'%'}">未添加内容</small>
                                 </p>
                             </div>
                         </div>
@@ -147,7 +147,7 @@
                                     安置社会就业人员
                                 </h4>
                                 <p class="card-text">
-                                    <small>未添加内容</small>
+                                    <small th:text="${upload_name.getEmployedPeople_Placement()+'人'}"></small>
                                 </p>
                             </div>
                         </div>
@@ -159,7 +159,7 @@
                                     员工满意度
                                 </h4>
                                 <p class="card-text">
-                                    <small>未添加内容</small>
+                                    <small th:text="${upload_name.getEmployee_Satisfaction()+'%'}">未添加内容</small>
                                 </p>
                             </div>
                         </div>
@@ -171,7 +171,7 @@
                                     歧视相关的申诉事件
                                 </h4>
                                 <p class="card-text">
-                                    <small>未添加内容</small>
+                                    <small th:text="${upload_name.getComplaint_Incidents()+'次'}">未添加内容</small>
                                 </p>
                             </div>
                         </div>
@@ -183,7 +183,7 @@
                                     总资产净利润率
                                 </h4>
                                 <p class="card-text">
-                                    <small>未添加内容</small>
+                                    <small th:text="${upload_name.getNetProfit_Margin()}">未添加内容</small>
                                 </p>
                             </div>
                         </div>
@@ -195,7 +195,7 @@
                                     资产负债率
                                 </h4>
                                 <p class="card-text">
-                                    <small>未添加内容</small>
+                                    <small  th:text="${upload_name.getDebt_Ratio()}">未添加内容</small>
                                 </p>
                             </div>
                         </div>
@@ -207,7 +207,7 @@
                                     营业收入增长率
                                 </h4>
                                 <p class="card-text">
-                                    <small>未添加内容</small>
+                                    <small th:text="${upload_name.getIncomeGrowth_Ratio()}">未添加内容</small>
                                 </p>
                             </div>
                         </div>
@@ -219,7 +219,7 @@
                                     财务杠杆
                                 </h4>
                                 <p class="card-text">
-                                    <small>未添加内容</small>
+                                    <small th:text="${upload_name.getFinancial_Leverage()}">未添加内容</small>
                                 </p>
                             </div>
                         </div>
@@ -231,7 +231,7 @@
                                     经营杠杆
                                 </h4>
                                 <p class="card-text">
-                                    <small>未添加内容</small>
+                                    <small th:text="${upload_name.getOperating_Leverage()}">未添加内容</small>
                                 </p>
                             </div>
                         </div>
@@ -243,7 +243,7 @@
                                     综合杠杆
                                 </h4>
                                 <p class="card-text">
-                                    <small>未添加内容</small>
+                                    <small th:text="${upload_name.getConsolidated_Leverage()}">未添加内容</small>
                                 </p>
                             </div>
                         </div>
@@ -255,7 +255,7 @@
                                     控股股东持股比例
                                 </h4>
                                 <p class="card-text">
-                                    <small>未添加内容</small>
+                                    <small th:text="${upload_name.getStockholderShareholding_Ratio()+'%'}">未添加内容</small>
                                 </p>
                             </div>
                         </div>
@@ -267,7 +267,7 @@
                                     机构投资者持股比例
                                 </h4>
                                 <p class="card-text">
-                                    <small>未添加内容</small>
+                                    <small th:text="${upload_name.getInvestorShareholding_Ratio()+'%'}">未添加内容</small>
                                 </p>
                             </div>
                         </div>
@@ -279,7 +279,7 @@
                                     管理层持股比例
                                 </h4>
                                 <p class="card-text">
-                                    <small>未添加内容</small>
+                                    <small th:text="${upload_name.getManagerShareholding_Ratio()+'%'}">未添加内容</small>
                                 </p>
                             </div>
                         </div>

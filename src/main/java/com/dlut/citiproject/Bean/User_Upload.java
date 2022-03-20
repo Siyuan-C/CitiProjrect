@@ -50,7 +50,7 @@ public class User_Upload {
                 '}';
     }
 
-    private  int id;
+
     private String Corporation_Name;    //企业名称
     private String EnvironmentalActions_Number;    //环保专项行动次数
     private String EnvironmentalInput_Costs;    //环保项目投入费用
