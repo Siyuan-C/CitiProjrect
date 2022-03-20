@@ -72,15 +72,15 @@
                 <h1>欢迎使用花道ESG</h1>
             </div>
             <div class="register_card card text-center">
-                <form action="" class="register_form text-center">
+                <form action="/register_data" class="register_form text-center">
                     <!-- 输入框组 -->
                     <div class="register_input form-floating">
                         <input type="text" class="form-control" placeholder="text" id="username" name="username">
                         <label for="username">请输入用户名</label>
                     </div>
                     <div class="register_input form-floating">
-                        <input type="tel" class="form-control" placeholder="number" id="mobile" name="mobile">
-                        <label for="mobile">请输入手机号</label>
+                        <input type="tel" class="form-control" placeholder="text" id="mobile" name="email">
+                        <label for="mobile">请输入邮箱</label>
                     </div>
                     <div class="register_input form-floating">
                         <input type="password" class="form-control" maxlength="16" placeholder="password" id="password" name="password">
@@ -94,6 +94,8 @@
                         <button class="btn btn-lg w-25 btn-primary" type="submit">注册</button>
                     </div>
                 </form>
+                <p style="color:blue" th:text="${message1}"th:if="${not #strings.isEmpty(message1)}"></p>
+                <p style="color:blue" th:text="${message2}"th:if="${not #strings.isEmpty(message2)}"></p>
                 <div id="tologin" class="login_link">
                     <p class="text-black">已经有帐号？<a href="login">登录</a></p>
                 </div>

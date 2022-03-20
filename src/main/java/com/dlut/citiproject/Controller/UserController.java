@@ -2,6 +2,7 @@ package com.dlut.citiproject.Controller;
 
 import com.dlut.citiproject.Bean.UserBean;
 import com.dlut.citiproject.Repository.UserRepository;
+import org.aspectj.bridge.IMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
+import java.util.*;
 
 @Controller
 public class UserController {
@@ -19,15 +21,22 @@ public class UserController {
 
     //接受 提交注册数据
     @RequestMapping("/register_data")
-    public String register_data( @RequestParam String username, String email, String password, Model model){
+    public String register_data( @RequestParam String username, String email, String password,String confirm, Model model){
         System.out.println("收到请求");
+        String message2="";
+        if(!password.equals(confirm))
+        {
+            message2 ="两次输入密码不一致";
+            model.addAttribute("message2", message2);
+            return "register";
+        }
         String message1 = null;
         if(userRepository.existsByName(username)){    //若存在此用户名  不允许重复注册
             message1 = "用户已存在，请重新输入！";
             model.addAttribute("message1", message1);
             return "register";
         }else{          //不存在此用户名，允许注册
-            UserBean userBean=new UserBean(username,password,email);
+            UserBean userBean=new UserBean((int)(Math.random()*1000),username,password,email);
             userRepository.save(userBean);
             return "reg_success";
         }
