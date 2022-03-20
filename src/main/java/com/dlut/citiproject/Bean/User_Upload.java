@@ -10,6 +10,7 @@ import javax.persistence.Table;
 public class User_Upload {
     @Id
     //属性
+    private int id;
     private String name;    //用户名
     private String Corporation_Name;    //企业名称
     private String EnvironmentalActions_Number;    //环保专项行动次数
