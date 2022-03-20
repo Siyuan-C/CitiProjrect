@@ -10,6 +10,8 @@ import javax.persistence.Table;
 public class User_Upload {
     @Id
     //属性
+    private String name;    //用户名
+    private String Corporation_Name;    //企业名称
     private String EnvironmentalActions_Number;    //环保专项行动次数
     private String EnvironmentalInput_Costs;    //环保项目投入费用
     private String Environmental_Investment;    //环保投资
@@ -33,12 +35,14 @@ public class User_Upload {
     private String ManagerShareholding_Ratio;   //管理层持股比例
 
     //有参构造
-    public User_Upload(String environmentalActions_Number, String environmentalInput_Costs, String environmental_Investment,
+    public User_Upload(String name, String corporation_Name, String environmentalActions_Number, String environmentalInput_Costs, String environmental_Investment,
                        String emissionReductions_Number, String environmental_Reports, String certification_ISO9001, String work_Accidents,
                        String majorSafety_Accidents, String customer_Satisfaction, String employedPeople_Placement, String employee_Satisfaction,
                        String complaint_Incidents, String netProfit_Margin, String debt_Ratio, String incomeGrowth_Ratio, String financial_Leverage,
                        String operating_Leverage, String consolidated_Leverage, String stockholderShareholding_Ratio, String investorShareholding_Ratio,
                        String managerShareholding_Ratio) {
+        this.name = name;
+        Corporation_Name = corporation_Name;
         EnvironmentalActions_Number = environmentalActions_Number;
         EnvironmentalInput_Costs = environmentalInput_Costs;
         Environmental_Investment = environmental_Investment;
@@ -65,6 +69,14 @@ public class User_Upload {
     //无参构造
     public User_Upload(){
 
+    }
+
+    public String getCorporation_Name() {
+        return Corporation_Name;
+    }
+
+    public void setCorporation_Name(String corporation_Name) {
+        Corporation_Name = corporation_Name;
     }
 
     public String getEnvironmentalActions_Number() {
