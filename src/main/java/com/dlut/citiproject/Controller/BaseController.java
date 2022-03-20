@@ -37,8 +37,6 @@ public class BaseController {
     User_UploadRepository UsrUpRepo;
     @Autowired
     UserRepository userRepository;
-    @Autowired
-    Login_UserBeanRepository loginUserBeanRepository;
 
     @RequestMapping("/")
     public String index(){
@@ -84,7 +82,12 @@ public class BaseController {
     public String env_disclosure(){return "env_disclosure";}
     @RequestMapping("/env_investment")
     public String env_investment(){return "env_investment";}
-
+    @RequestMapping("/reg_success")
+    public String reg_success(){return "reg_success";}
+    @RequestMapping("/navbar")
+    public String navbar(){return "navbar";}
+    @RequestMapping("/footer")
+    public String footer(){return "footer";}
 
     @RequestMapping("/search_data")
     public String search(@RequestParam String enterprise_name, Model model){
@@ -110,8 +113,8 @@ public class BaseController {
     @RequestMapping("/my_account")
     public String my_account(@RequestParam("upload_name") String upload_name,Model model,HttpSession session) {
         upload_name = (String) session.getAttribute("loginUser");
-        if (!loginUserBeanRepository.existsByName(upload_name)) {
-           return login();//如果用户不存在则去登录、注册
+        if (!userRepository.existsByName(upload_name)) {
+           return "login";//如果用户不存在则去登录、注册
         }
         else{   //检测到表中存在该上传的用户
             ArrayList<User_Upload> usr_up_ret = UsrUpRepo.findUser_UploadBy_Name(upload_name);

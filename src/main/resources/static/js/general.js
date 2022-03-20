@@ -1,6 +1,8 @@
 $(document).ready(function () {
-    $('#nav').load('navbar.html');
-    $('#footer').load('footer.html');
+    $('#nav').load('navbar');
+    $('#footer').load('footer');
+    $('#navlogin').load('navbar_login');
+
 });
 
 /**

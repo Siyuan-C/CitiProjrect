@@ -93,9 +93,10 @@
             <img src="img/search/search2.jpg" alt="搜索"
                  style="width: 25px;height: 25px;border-radius: 50px;"/>
         </button>
-        <p style="color:blue" th:text="${message}"th:if="${not #strings.isEmpty(message)}"></p>
+        <br>
         <!--输入框右侧查询的蓝色放大镜搜索按钮-->
     </form>
+    <p style="color:blue" th:text="${message}"th:if="${not #strings.isEmpty(message)}"></p>
 </div>
 
 <div class="diagram container">

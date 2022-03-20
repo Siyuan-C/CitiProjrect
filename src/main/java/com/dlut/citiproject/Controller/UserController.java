@@ -1,8 +1,6 @@
 package com.dlut.citiproject.Controller;
 
-import com.dlut.citiproject.Bean.Login_UserBean;
 import com.dlut.citiproject.Bean.UserBean;
-import com.dlut.citiproject.Repository.Login_UserBeanRepository;
 import com.dlut.citiproject.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,13 +12,10 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 public class UserController {
-    //注入用户jpa操作接口
+    //注入用户jpa
+    // 操作接口
     @Autowired
     UserRepository userRepository;
-    @Autowired
-    Login_UserBeanRepository loginUserBeanRepository;
-
-
 
     //接受 提交注册数据
     @RequestMapping("/register_data")
@@ -34,7 +29,7 @@ public class UserController {
         }else{          //不存在此用户名，允许注册
             UserBean userBean=new UserBean(username,password,email);
             userRepository.save(userBean);
-            return "注册成功";
+            return "reg_success";
         }
     }
 
@@ -47,17 +42,15 @@ public class UserController {
             model.addAttribute("message2", message2);
             return "login";
         }
-        if(loginUserBeanRepository.existsByName(username)){
-            Login_UserBean s = loginUserBeanRepository.getLogin_UserBeanByName(username);
+        if(userRepository.existsByName(username)){
+            UserBean s = userRepository.findUserBeanByName(username);
             if(password.equals(s.getPassword())){
                 session.setAttribute("loginUser",username);
-
-
-                return "redirect:/WH_business";
+                return "index";
             }else{
                 message3 = "密码有误！";
                 model.addAttribute("message3", message3);
-                return "登录";
+                return "login";
             }
         }
         if(!userRepository.existsByName(username)){     //不存在此用户
