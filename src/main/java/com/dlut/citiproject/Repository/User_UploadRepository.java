@@ -15,4 +15,6 @@ public interface User_UploadRepository extends JpaRepository<User_Upload,Long> {
 
     @Query(value = "SELECT * FROM 企业上传信息表 WHERE name = :name", nativeQuery = true)
     User_Upload findUser_Upload_inuserByName(@Param("name")String name);
+
+    boolean existsByName(String name);
 }

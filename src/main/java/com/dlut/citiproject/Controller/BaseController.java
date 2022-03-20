@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.*;
 
 @Controller
 public class BaseController {
@@ -32,8 +33,8 @@ public class BaseController {
     Risk_LevelRepository RisLevRepo;
     @Autowired
     SocialResponsibility_IndexRepository SocResRepo;
-    @Autowired
-    User_UploadRepository user_UploadRepository;
+//    @Autowired
+//    User_UploadRepository user_UploadRepository;
 
     @Autowired
     User_UploadRepository ser_UploadRepository;
@@ -119,15 +120,16 @@ public class BaseController {
     @RequestMapping("/my_account")
     public String my_account(Model model,HttpSession session) {
        String name = (String) session.getAttribute("loginUser");
-       System.out.println(name);
-       User_Upload upload = UsrUpRepo.findUser_Upload_inuserByName(name);
-        System.out.println(upload.toString());
-        if (!userRepository.existsByName(upload.getName())) {
+       //System.out.println(name);
+//       User_Upload upload = UsrUpRepo.findUser_Upload_inuserByName(name);
+        //System.out.println(upload.toString());
+        if (!UsrUpRepo.existsByName(name)) {
            return "ent_upload";//如果用户不存在则去登录、注册
         }
         else{   //检测到表中存在该上传的用户
 //            ArrayList<User_Upload> usr_up_ret = UsrUpRepo.findUser_UploadBy_Name(upload_name);
-            System.out.println(upload.toString());
+            User_Upload upload = UsrUpRepo.findUser_Upload_inuserByName(name);
+            //System.out.println(upload.toString());
             model.addAttribute("upload_name", upload);
             return "my_account";
                 }
@@ -135,27 +137,25 @@ public class BaseController {
 
 
     //企业上传信息
-    @RequestMapping("/ent_upload")
-    public String upload(@RequestParam String name, String enterprise_name, String envir_action_num, String envir_input_cost,
-                                String envir_investment, String emission_reduct_num, String envir_report, String certification_ISO9001, String work_accident,
-                                String major_safe_accident, String customer_satisfaction, String employee_place_num, String employee_satisfaction, String complaint_incident_num,
-                                String net_profit_margin, String debt_ratio, String income_grow_ratio, String finance_leverage, String operate_leverage,
-                                String consolidated_leverage, String stockholder_ratio, String investor_ratio, String manager_ratio) throws IOException {
-//        String business_license_path;
-//        String path = "D:\\picture4\\"+name+"\\";
-//        business_license_path = path + license.getOriginalFilename();
-//        File file = new File(business_license_path);
-//        if(!file.getParentFile().exists()){
-//            file.getParentFile().mkdirs();
-//        }
-//        license.transferTo(file);//文件写入
-        User_Upload user_Upload = new User_Upload(name, enterprise_name, envir_action_num,  envir_input_cost,
+    @RequestMapping("/ent_upload_test")
+    public String upload( @RequestParam String enterprise_name, String envir_action_num, String envir_input_cost,
+                        String envir_investment,  String emission_reduct_num,  String envir_report,  String certification_ISO9001,  String work_accident,
+                        String major_safe_accident,  String customer_satisfaction,  String employee_place_num,  String employee_satisfaction,  String complaint_incident_num,
+                          String net_profit_margin, String debt_ratio, String income_grow_ratio,  String finance_leverage,  String operate_leverage,
+                         String consolidated_leverage, String stockholder_ratio,  String investor_ratio,  String manager_ratio,HttpSession session) throws IOException {
+
+        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        String name = (String) session.getAttribute("loginUser");
+        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        System.out.println(name);
+        User_Upload user_Upload = new User_Upload((int)(Math.random()*1000), name, enterprise_name, envir_action_num,  envir_input_cost,
                 envir_investment, emission_reduct_num, envir_report, certification_ISO9001, work_accident,
                 major_safe_accident, customer_satisfaction, employee_place_num, employee_satisfaction, complaint_incident_num,
                 net_profit_margin, debt_ratio, income_grow_ratio, finance_leverage, operate_leverage,
                 consolidated_leverage, stockholder_ratio, investor_ratio, manager_ratio);
-        user_UploadRepository.save(user_Upload);
-        return "ent_upload";
+        System.out.println(user_Upload.toString());
+        UsrUpRepo.save(user_Upload);
+        return "input_success";
     }
 
 

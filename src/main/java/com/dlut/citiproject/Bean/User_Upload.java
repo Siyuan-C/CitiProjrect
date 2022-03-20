@@ -75,12 +75,13 @@ public class User_Upload {
     private String ManagerShareholding_Ratio;   //管理层持股比例
 
     //有参构造
-    public User_Upload(String name, String corporation_Name, String environmentalActions_Number, String environmentalInput_Costs, String environmental_Investment,
+    public User_Upload(int id, String name, String corporation_Name, String environmentalActions_Number, String environmentalInput_Costs, String environmental_Investment,
                        String emissionReductions_Number, String environmental_Reports, String certification_ISO9001, String work_Accidents,
                        String majorSafety_Accidents, String customer_Satisfaction, String employedPeople_Placement, String employee_Satisfaction,
                        String complaint_Incidents, String netProfit_Margin, String debt_Ratio, String incomeGrowth_Ratio, String financial_Leverage,
                        String operating_Leverage, String consolidated_Leverage, String stockholderShareholding_Ratio, String investorShareholding_Ratio,
                        String managerShareholding_Ratio) {
+        this.id = id;
         this.name = name;
         Corporation_Name = corporation_Name;
         EnvironmentalActions_Number = environmentalActions_Number;
