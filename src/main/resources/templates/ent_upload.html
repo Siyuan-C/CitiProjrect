@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>企业信息上传</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/general.css" rel="stylesheet">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/general.js"></script>
+<!--    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<!--    <link rel="stylesheet" type="text/css" href="css/header.css">-->
+<!--    <link rel="stylesheet" type="text/css" href="css/footer.css">-->
+<!--    <link rel="stylesheet" type="text/css" href="css/certification.css">-->
+</head>
+<input type="hidden" name="Name" th:value="${enterprise_name}"/>
+<body>
+
+<!--<nav class="navbar navbar-expand-lg navbar-ligh shadow">-->
+<!--    <a class="navbar-brand" href="#">-->
+<!--        <img src="resource/blackLogo.png" alt="logo">-->
+<!--    </a>-->
+<!--    <div class="collapse navbar-collapse">-->
+<!--&lt;!&ndash;        <ul class="navbar-nav mr-auto">&ndash;&gt;-->
+<!--&lt;!&ndash;            <li class="nav-item head-tag active"><a class="nav-link" href="/after_login">首页</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;            <li class="nav-item head-tag"><a class="nav-link " href="/business">业务大厅</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;            <li class="nav-item head-tag"><a class="nav-link " href="javascript:void(0);">关于我们</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;        </ul>&ndash;&gt;-->
+
+<!--        <ul class="navbar-nav">-->
+<!--            <li class="nav-item head-tag">-->
+<!--                <a class="nav-link" href="javascript:void(0);">-->
+<!--                    <img src="resource/u92.png" alt="app">-->
+<!--                    手机App-->
+<!--                </a>-->
+<!--            </li>-->
+<!--            <li class="nav-item head-tag">-->
+<!--                <a class="nav-link" href="#">-->
+<!--                    个人中心-->
+<!--                </a>-->
+<!--            </li>-->
+<!--        </ul>-->
+<!--    </div>-->
+<!--</nav>-->
+<div class="main">
+    <div id="whitebox" class="container">
+        <form  th:action="@{'ent_upload?name='+${name}}" method="post" enctype="multipart/form-data">
+            <div class="row" id="box-head">
+                <div class="col-md-10 offset-md-1">
+                    <label id="box-title">
+                        <b>企业信息上传</b>
+                    </label>
+                </div>
+            </div>
+            <div class="row" id="box-content">
+                <div class="col-md-6" id="box-content-left">
+<!--                    <div class="row content-group">-->
+<!--                        <div class="col-md-4 info">-->
+<!--                            <label class="label-text">营业执照</label>-->
+<!--                        </div>-->
+<!--                        <div class="col-md-7 offset-md-1">-->
+<!--                            <label class="btn label-file">点击上传营业执照照片-->
+<!--                                <input type="file" name="license" class="input-file">-->
+<!--                            </label>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+                    <div class="row content-group">
+                        <div class="col-md-4 info" style="padding-top: 0">
+                            <label class="label-text">企业名称</label>
+                        </div>
+                        <div class="col-md-7 offset-md-1">
+                            <input type="text" name="enterprise_name" class="form-control input-text" placeholder="请输入企业名称">
+                        </div>
+                    </div>
+
+                    <div class="row content-group">
+                        <div class="col-md-4 info">
+                            <label class="label-text">环保专项行动次数</label>
+                        </div>
+                        <div class="col-md-7 offset-md-1">
+                            <input type="text" name="envir_action_num" class="form-control input-text" placeholder="请输入环保专项行动次数">
+                        </div>
+                    </div>
+
+                    <div class="row content-group">
+                        <div class="col-md-4 info">
+                            <label class="label-text">环保项目投入费用</label>
+                        </div>
+                        <div class="col-md-7 offset-md-1">
+                            <input type="text" name="envir_input_cost" class="form-control input-text" placeholder="请输入环保项目投入费用">
+                        </div>
+                    </div>
+                    <div class="row content-group">
+                        <div class="col-md-4 info">
+                            <label class="label-text">环保投资</label>
+                        </div>
+                        <div class="col-md-7 offset-md-1">
+                            <input type="text" name="envir_investment" class="form-control input-text" placeholder="请输入环保投资">
+                        </div>
+                    </div>
+                    <div class="row content-group">
+                        <div class="col-md-4 info">
+                            <label class="label-text">废水、废气等减排治理次数</label>
+                        </div>
+                        <div class="col-md-7 offset-md-1">
+                            <input type="text" name="emission_reduct_num" class="form-control input-text" placeholder="请输入废水、废气等减排治理次数">
+                        </div>
+                    </div>
+                    <div class="row content-group">
+                        <div class="col-md-4 info">
+                            <label class="label-text">环境报告/社会责任报告</label>
+                        </div>
+                        <div class="col-md-7 offset-md-1">
+                            <input type="text" name="envir_report" class="form-control input-text" placeholder="请输入环境报告/社会责任报告">
+                        </div>
+                    </div>
+                    <div class="row content-group">
+                        <div class="col-md-4 info">
+                            <label class="label-text">是否通过ISO9001认证</label>
+                        </div>
+                        <div class="col-md-7 offset-md-1">
+                            <input type="text" name="certification_ISO9001" class="form-control input-text" placeholder="请输入是否通过ISO9001认证">
+                        </div>
+                    </div>
+                    <div class="row content-group" style="margin-bottom: 0">
+                        <div class="col-md-4 info">
+                            <label class="label-text">工伤事故次数</label>
+                        </div>
+                        <div class="col-md-7 offset-md-1">
+                            <input type="text" name="work_accident" class="form-control input-text" placeholder="请输入工伤事故次数">
+                        </div>
+                    </div>
+
+                    <div class="row content-group" style="margin-bottom: 0">
+                        <div class="col-md-4 info">
+                            <label class="label-text">重大安全事故次数</label>
+                        </div>
+                        <div class="col-md-7 offset-md-1">
+                            <input type="text" name="major_safe_accident" class="form-control input-text" placeholder="请输入重大安全事故次数">
+                        </div>
+                    </div>
+                    <div class="row content-group" style="margin-bottom: 0">
+                        <div class="col-md-4 info">
+                            <label class="label-text">客户满意度</label>
+                        </div>
+                        <div class="col-md-7 offset-md-1">
+                            <input type="text" name="customer_satisfaction" class="form-control input-text" placeholder="请输入客户满意度">
+                        </div>
+                    </div>
+                    <div class="row content-group" style="margin-bottom: 0">
+                        <div class="col-md-4 info">
+                            <label class="label-text">安置社会就业人员人数</label>
+                        </div>
+                        <div class="col-md-7 offset-md-1">
+                            <input type="text" name="employee_place_num" class="form-control input-text" placeholder="请输入安置社会就业人员人数">
+                        </div>
+                    </div>
+                    <div class="row content-group" style="margin-bottom: 0">
+                        <div class="col-md-4 info">
+                            <label class="label-text">员工满意度</label>
+                        </div>
+                        <div class="col-md-7 offset-md-1">
+                            <input type="text" name="employee_satisfaction" class="form-control input-text" placeholder="请输入员工满意度">
+                        </div>
+                    </div>
+                    <div class="row content-group" style="margin-bottom: 0">
+                        <div class="col-md-4 info">
+                            <label class="label-text">歧视相关的申诉事件次数</label>
+                        </div>
+                        <div class="col-md-7 offset-md-1">
+                            <input type="text" name="complaint_incident_num" class="form-control input-text" placeholder="请输入歧视相关的申诉事件次数">
+                        </div>
+                    </div>
+                    <div class="row content-group" style="margin-bottom: 0">
+                        <div class="col-md-4 info">
+                            <label class="label-text">总资产净利润率</label>
+                        </div>
+                        <div class="col-md-7 offset-md-1">
+                            <input type="text" name="net_profit_margin" class="form-control input-text" placeholder="请输入总资产净利润率">
+                        </div>
+                    </div>
+                    <div class="row content-group" style="margin-bottom: 0">
+                        <div class="col-md-4 info">
+                            <label class="label-text">资产负债率</label>
+                        </div>
+                        <div class="col-md-7 offset-md-1">
+                            <input type="text" name="debt_ratio" class="form-control input-text" placeholder="请输入资产负债率">
+                        </div>
+                    </div>
+                    <div class="row content-group" style="margin-bottom: 0">
+                        <div class="col-md-4 info">
+                            <label class="label-text">营业收入增长率</label>
+                        </div>
+                        <div class="col-md-7 offset-md-1">
+                            <input type="text" name="income_grow_ratio" class="form-control input-text" placeholder="请输入营业收入增长率">
+                        </div>
+                    </div>
+                    <div class="row content-group" style="margin-bottom: 0">
+                        <div class="col-md-4 info">
+                            <label class="label-text">财务杠杆</label>
+                        </div>
+                        <div class="col-md-7 offset-md-1">
+                            <input type="text" name="finance_leverage" class="form-control input-text" placeholder="请输入财务杠杆">
+                        </div>
+                    </div>
+                    <div class="row content-group" style="margin-bottom: 0">
+                        <div class="col-md-4 info">
+                            <label class="label-text">经营杠杆</label>
+                        </div>
+                        <div class="col-md-7 offset-md-1">
+                            <input type="text" name="operate_leverage" class="form-control input-text" placeholder="请输入经营杠杆">
+                        </div>
+                    </div>
+                    <div class="row content-group" style="margin-bottom: 0">
+                        <div class="col-md-4 info">
+                            <label class="label-text">综合杠杆</label>
+                        </div>
+                        <div class="col-md-7 offset-md-1">
+                            <input type="text" name="consolidated_leverage" class="form-control input-text" placeholder="请输入综合杠杆">
+                        </div>
+                    </div>
+                    <div class="row content-group" style="margin-bottom: 0">
+                        <div class="col-md-4 info">
+                            <label class="label-text">控股股东持股比例</label>
+                        </div>
+                        <div class="col-md-7 offset-md-1">
+                            <input type="text" name="stockholder_ratio" class="form-control input-text" placeholder="请输入控股股东持股比例">
+                        </div>
+                    </div>
+                    <div class="row content-group" style="margin-bottom: 0">
+                        <div class="col-md-4 info">
+                            <label class="label-text">机构投资者持股比例</label>
+                        </div>
+                        <div class="col-md-7 offset-md-1">
+                            <input type="text" name="investor_ratio" class="form-control input-text" placeholder="请输入机构投资者持股比例">
+                        </div>
+                    </div>
+                    <div class="row content-group" style="margin-bottom: 0">
+                        <div class="col-md-4 info">
+                            <label class="label-text">管理层持股比例</label>
+                        </div>
+                        <div class="col-md-7 offset-md-1">
+                            <input type="text" name="manager_ratio" class="form-control input-text" placeholder="请输入管理层持股比例">
+                        </div>
+                    </div>
+
+                </div>
+
+
+<!--                <div class="col-md-6" id="box-content-right">-->
+<!--                    <div class="row content-group">-->
+<!--                        <div class="col-md-3 info">-->
+<!--                            <label class="label-text">法人身份证</label>-->
+<!--                        </div>-->
+<!--                        <div class="col-md-8 offset-md-1">-->
+<!--                            <label class="btn label-file">点击上传法人身份证照片（正面）-->
+<!--                                <input type="file" name="legal_front" class="input-file">-->
+<!--                            </label>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="row content-group">-->
+<!--                        <div class="col-md-8 offset-md-4">-->
+<!--                            <label class="btn label-file">点击上传法人身份证照片（反面）-->
+<!--                                <input type="file" name="legal_back" class="input-file">-->
+<!--                            </label>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="row content-group">-->
+<!--                        <div class="col-md-3 info">-->
+<!--                            <label class="label-text">法人姓名</label>-->
+<!--                        </div>-->
+<!--                        <div class="col-md-8 offset-md-1">-->
+<!--                            <input type="text" name="legal_name" class="form-control input-text" placeholder="请输入法人姓名">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="row content-group">-->
+<!--                        <div class="col-md-3 info">-->
+<!--                            <label class="label-text">法人证字号</label>-->
+<!--                        </div>-->
+<!--                        <div class="col-md-8 offset-md-1">-->
+<!--                            <input type="text" name="legal_code" class="form-control input-text" placeholder="请输入法人证字号">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="row content-group">-->
+<!--                        <div class="col-md-3 info">-->
+<!--                            <label class="label-text">法人联系电话</label>-->
+<!--                        </div>-->
+<!--                        <div class="col-md-8 offset-md-1">-->
+<!--                            <input type="text" name="legal_phone" class="form-control input-text" placeholder="请输入法人联系电话">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+            </div>
+            <div class="row" id="box-foot">
+                <div class="btn btn-submit">
+                    <input type="submit" class="btn" id="my-submit" value="提交">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<footer class="container-fluid">
+    <div class="row">
+        <div class="col-md-1 offset-1 foot-tag">
+            <p><a href="#">关于我们</a></p>
+        </div>
+        <div class="col-md-2 foot-tag">
+            <p><a href="#">法律声明及隐私政策</a></p>
+        </div>
+        <div class="col-md-1 offset-1 foot-tag">
+            <p><a href="#">加入我们</a></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 offset-1 foot-tag foot-tag-color">
+            <address>Address/地址：辽宁省大连经济技术开发区图强街321号</address>
+        </div>
+        <div class="col-md-2 foot-tag foot-tag-color">
+            <p>P.C./邮编：116600</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 offset-1 foot-tag foot-tag-color">
+            <p>Tel/联系电话：020-000000 000-000000</p>
+        </div>
+        <div class="col-md-2 foot-tag foot-tag-color">
+            <p>Mail/邮箱：contact@fkadjkhsf.com</p>
+        </div>
+    </div>
+
+</footer>
+</body>
+</html>

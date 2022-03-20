@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 import java.util.ArrayList;
 
 @Controller
@@ -31,6 +32,11 @@ public class BaseController {
     Risk_LevelRepository RisLevRepo;
     @Autowired
     SocialResponsibility_IndexRepository SocResRepo;
+    @Autowired
+    User_UploadRepository user_UploadRepository;
+
+    @Autowired
+    User_UploadRepository ser_UploadRepository;
 
 
     @Autowired
@@ -125,12 +131,36 @@ public class BaseController {
 
 
     //企业上传信息
-    @RequestMapping("/upload")
-    public String upload(@RequestParam String Name, Model model){
-        model.addAttribute("name",Name);
-        System.out.println(Name);
-        return "upload";
+    @RequestMapping("/ent_upload")
+    public String upload(@RequestParam String name, String enterprise_name, String envir_action_num, String envir_input_cost,
+                                String envir_investment, String emission_reduct_num, String envir_report, String certification_ISO9001, String work_accident,
+                                String major_safe_accident, String customer_satisfaction, String employee_place_num, String employee_satisfaction, String complaint_incident_num,
+                                String net_profit_margin, String debt_ratio, String income_grow_ratio, String finance_leverage, String operate_leverage,
+                                String consolidated_leverage, String stockholder_ratio, String investor_ratio, String manager_ratio) throws IOException {
+//        String business_license_path;
+//        String path = "D:\\picture4\\"+name+"\\";
+//        business_license_path = path + license.getOriginalFilename();
+//        File file = new File(business_license_path);
+//        if(!file.getParentFile().exists()){
+//            file.getParentFile().mkdirs();
+//        }
+//        license.transferTo(file);//文件写入
+        User_Upload user_Upload = new User_Upload(name, enterprise_name, envir_action_num,  envir_input_cost,
+                envir_investment, emission_reduct_num, envir_report, certification_ISO9001, work_accident,
+                major_safe_accident, customer_satisfaction, employee_place_num, employee_satisfaction, complaint_incident_num,
+                net_profit_margin, debt_ratio, income_grow_ratio, finance_leverage, operate_leverage,
+                consolidated_leverage, stockholder_ratio, investor_ratio, manager_ratio);
+        user_UploadRepository.save(user_Upload);
+        return "ent_upload";
     }
+
+
+//    @RequestMapping("/upload")
+//    public String upload(@RequestParam String Name, Model model){
+//        model.addAttribute("name",Name);
+//        System.out.println(Name);
+//        return "upload";
+//    }
 
     @GetMapping("/enterprise")
     public String display(@RequestParam("enterprise_name") String enterprise_name, Model model,HttpSession session){
@@ -171,5 +201,8 @@ public class BaseController {
         return "enterprise";
 
     }
+
+
+
 
 }
